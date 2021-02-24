@@ -1,6 +1,6 @@
-import navEmailHeader from '../cmps/nav-email-Header.js'
-import navEmailSide from '../cmps/nav-email-side.js'
-import emailsContainer from '../cmps/emails-container.js'
+import navEmailHeader from '../cmps/email-Header.cmp.js'
+import navEmailSide from '../cmps/email-side-bar.cmp.js'
+import emailsContainer from '../cmps/email-list.cmp.js'
 
 
 export default {
@@ -13,9 +13,9 @@ export default {
         </div>
     </section>
     `,
-   components: {
-    navEmailHeader,
-    navEmailSide,
-    emailsContainer,
-},
+    components: {
+        navEmailHeader,
+        navEmailSide,
+        emailsContainer,
+    },
 }

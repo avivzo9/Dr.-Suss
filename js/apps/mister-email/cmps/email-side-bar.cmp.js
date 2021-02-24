@@ -1,6 +1,7 @@
-import addEmail from '../cmps/add-email.js'
-import inboxEmails from '../cmps/inbox-emails.js'
+import addEmail from '../cmps/email-add.cmp.js'
+import inboxEmails from '../cmps/email-inbox.cmp.js'
 import starredEmails from './email-stared.cmp.js'
+
 export default {
     template: `
     <section> 

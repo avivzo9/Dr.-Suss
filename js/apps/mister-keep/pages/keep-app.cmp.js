@@ -1,6 +1,6 @@
 import keepAddNoteCmp from "../cmps/keep-add-note.cmp.js";
 import keepHeaderCmp from "../cmps/keep-header.cmp.js"
-import keepNots from '../cmps/keep-notes.cmp.js'
+import keepNotes from '../cmps/keep-add-note.cmp.js'
 import { keepService } from '../services/keep.service.js'
 
 export default {
@@ -30,7 +30,7 @@ export default {
     components: {
         keepAddNoteCmp,
         keepHeaderCmp,
-        keepNots,
+        keepNots: keepNotes,
         keepService
     }
 }

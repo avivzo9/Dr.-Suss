@@ -10,6 +10,7 @@ export default {
         <nav>
             <router-link to="/about/team">About our Team</router-link> |
             <router-link to="/about/services">About our Services</router-link>
+            <h1>dd</h1>
         </nav>
         <router-view />
         <button @click="callBus">Call the bus!</button>

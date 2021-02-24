@@ -1,0 +1,48 @@
+[33mcommit 2898fed505b17fe121d8a995af91c7b9387fd71f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Aviv Zohar <avivzo9@gmail.com>
+Date:   Wed Feb 24 16:14:26 2021 +0200
+
+    after Tal changes after html work
+
+[33mcommit dcb3bcef57bf11d964d25d77b5d31d56ec4ed5dd[m
+Author: Aviv Zohar <avivzo9@gmail.com>
+Date:   Wed Feb 24 16:04:04 2021 +0200
+
+    after Tal changes
+
+[33mcommit fc950dbdf1e49df6198bf388f58681c17b999f37[m
+Author: hadarmarom <hadarmarom1@gmail.com>
+Date:   Wed Feb 24 14:51:30 2021 +0200
+
+    hadar- after pull components skeltons ready, just stertes service
+
+[33mcommit 46ef0f88762b2a4b54547d4c71697042b1a0f3d7[m
+Merge: 63b3e14 a39bcb5
+Author: hadarmarom <hadarmarom1@gmail.com>
+Date:   Wed Feb 24 14:47:02 2021 +0200
+
+    Merge branch 'main' of https://github.com/avivzo9/Dr.-Suss
+
+[33mcommit 63b3e148c7f06b75ed4299bfc108e6c663352235[m
+Author: hadarmarom <hadarmarom1@gmail.com>
+Date:   Wed Feb 24 14:46:47 2021 +0200
+
+    hadar- components skeltons ready, just stertes service
+
+[33mcommit a39bcb538657f3c36a823c6025714f094bbcd7ee[m
+Author: Aviv Zohar <avivzo9@gmail.com>
+Date:   Wed Feb 24 14:44:06 2021 +0200
+
+    keep-notes Added by Aviv
+
+[33mcommit 2139d3abb0b9925d27cb433e6e8c1d8f59a23e99[m
+Author: hadarmarom <hadarmarom1@gmail.com>
+Date:   Wed Feb 24 12:26:45 2021 +0200
+
+    about h1
+
+[33mcommit ab0aedc0feb74a585ea9bdb149976545872e6937[m
+Author: Aviv Zohar <avivzo9@gmail.com>
+Date:   Wed Feb 24 11:59:43 2021 +0200
+
+    dr. suss init

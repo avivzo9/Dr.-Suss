@@ -8,7 +8,7 @@ export default {
     template: `
     <section>
         <keep-header-cmp />
-        <keep-add-note-cmp @note-added="updateNotes" />
+        <keep-add-note-cmp @note-update="loadNotes" />
         <keep-notes :notes="notes" />
     </section>
     `,
@@ -24,12 +24,13 @@ export default {
                     this.notes = notes;
                 })
         },
-        updateNotes(notes) {
-            this.notes = notes
-        },
     },
     created() {
         this.loadNotes()
+        eventBus.$on('note-update', this.loadNotes)
+    },
+    destroyed() {
+        eventBus.$off('note-update', this.loadNotes)
     },
     components: {
         keepAddNoteCmp,

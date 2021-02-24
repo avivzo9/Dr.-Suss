@@ -24,7 +24,8 @@ export default {
             note: {
                 header: '',
                 text: '',
-                color: ''
+                color: '',
+                isPinned: false
             }
         }
     },
@@ -37,20 +38,24 @@ export default {
         },
         addNote() {
             if (this.note.color === '') this.note.color === 'white'
+            this.$emit('color-changed', this.note.color)
             keepService.addNote(this.note)
-                .then(notes => {
-                    this.$emit('note-added', notes)
+                .then(() => {
+                    this.$emit('note-update')
                     this.close()
                     this.note = {
                         header: '',
                         text: '',
-                        color: ''
+                        color: '',
+                        isPinned: false
                     }
                 })
         },
         sendDeleteNote(id) {
             keepService.deleteNote(id)
-                .then()
+                .then(() => {
+                    this.$emit('note-update')
+                })
         }
     },
     created() {

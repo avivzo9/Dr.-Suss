@@ -1,10 +1,13 @@
 import { storageService } from '../../../services/async-storage-service.js'
 import { utillService } from '../../../services/util.service.js'
+
 const KEY = 'notes'
 
 export const keepService = {
-    addBook,
-    query
+    addNote,
+    query,
+    getNoteById,
+    deleteNote
 }
 
 var gNotes = [{
@@ -27,8 +30,6 @@ var gNotes = [{
     },
 ]
 
-function addBook(note) {}
-
 function query() {
     return storageService.query(KEY)
         .then(notes => {
@@ -37,4 +38,22 @@ function query() {
                 return gNotes
             } else return notes;
         })
+}
+
+function addNote(note) {
+    return query()
+        .then(notes => {
+            notes.push(note)
+            utillService.saveToStorage(KEY, notes)
+            return notes;
+        })
+}
+
+function deleteNote(id) {
+    return storageService.remove(KEY, id)
+}
+
+
+function getNoteById(id) {
+    return storageService.get(KEY, id);
 }

@@ -7,26 +7,30 @@ export const keepService = {
     addNote,
     query,
     getNoteById,
-    deleteNote
+    deleteNote,
+    colorChange
 }
 
 var gNotes = [{
         id: storageService.makeId(),
         header: 'CSS',
         text: 'Do some work on CSS',
-        color: 'blue'
+        color: 'blue',
+        isPinned: false
     },
     {
         id: storageService.makeId(),
         header: 'JS',
         text: 'Make ToDo List',
-        color: 'green'
+        color: 'green',
+        isPinned: false
     },
     {
         id: storageService.makeId(),
         header: 'HTML',
         text: 'HTML is useless',
-        color: 'red'
+        color: 'red',
+        isPinned: false
     },
 ]
 
@@ -51,9 +55,20 @@ function addNote(note) {
 
 function deleteNote(id) {
     return storageService.remove(KEY, id)
+        .then(() => {
+            return
+        })
 }
 
 
 function getNoteById(id) {
     return storageService.get(KEY, id);
+}
+
+function colorChange(id, color) {
+    return getNoteById(id)
+        .then(note => {
+            note.color = color
+            storageService.put(KEY, note)
+        })
 }

@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    /* background-image: url(../../js/app/miss-book/img/book.jpg); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1 {
+    color: rgb(39, 75, 45);
+    font-family: cursive;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px lightgray;
+}
+
+h2 {
+    font-size: 18px;
+    font-family: cursive;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+p {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.book-app {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: black; */
+    background-image: none;
+}
+
+
+/* HEADER */
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(206, 233, 211, 0.9);
+}
+
+.logo {
+    margin-inline-start: 40px;
+}
+
+nav {
+    margin-inline-end: 40px;
+}
+
+
+/* BOOK FILTER */
+
+.book-filter {
+    margin-top: 10px;
+    margin-left: 70px;
+    /* background-color: #fff; */
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filter-btn {
+    width: 200px;
+    height: 20px;
+    border-radius: 18px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+
+/* BOOK ADD */
+
+.book-add {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.book-add-list {
+    background-color: white;
+}
+
+
+/* HOME PAGE */
+
+
+/* BOOK CONTAINER */
+
+.book-list-container {
+    margin-right: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    /* background-image: none; */
+}
+
+.book-list {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 190px;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid rgb(177, 153, 153);
+    list-style: none;
+    box-shadow: 5px 5px 5px lightgray;
+}
+
+img {
+    width: 100%;
+    height: 12.5rem;
+    object-fit: contain;
+}
+
+.list-btn {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: wheat;
+}
+
+
+/* BOOK DETAILS */
+
+.modal-details {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid white;
+    background-color: wheat;
+}
+
+table {
+    margin-top: 10px;
+    border: 1px solid black;
+    font-family: cursive;
+    table-layout: fixed;
+    ;
+}
+
+th {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.table-img {
+    width: 50px;
+    height: 50px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.book-review {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    font-family: cursive;
+    text-decoration: bolder;
+}
+
+.reviews-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-right:100px; */
+}
+
+.review-list {
+    table-layout: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+.back {
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    background-color: lightgrey;
+    color: black;
+    box-shadow: 2px 2px 2px rgb(192, 95, 95);
+}
+
+
+/* USER - MSG */
+
+.user-msg {
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+}
+
+.success {
+    background-color: rgb(30, 207, 30);
+}
+
+.error {
+    background-color: red;
+}

@@ -1,11 +1,15 @@
+
+import { emailsService } from "../services/email.service.js";
+import {eventBus} from "../services/email-event-bus.service.js"
+
 export default {
     template: `
         <section>   
         <form  @submit.prevent="clicked">
-            <input type="email" placeholder="to" @input="inEmail" v-model="email.to" required/>
-            <input type="text" placeholder="subtitle" @input="inSubtitle" v-model="email.subtitle" />
-            <input type="text" placeholder="subject" @input="inSubject" v-model="email.subject"/>
-            <button @click="clicked">send</button>
+            <input type="email" placeholder="to"  v-model="email.to" />
+            <input type="text" placeholder="subject"  v-model="email.subject" />
+            <input type="text" placeholder="body" v-model="email.body"/>
+            <button @click="save">send</button>
             <button @click="clicked">garbage</button>
         </form>
         </section>
@@ -15,8 +19,10 @@ export default {
        isClick:false,
        email:{
             to:'',
-            subtitle:'',
             subject:'',
+            body:'',
+            isRead:false,
+            sentAt: Date.now()
        }
       }
     },
@@ -24,14 +30,10 @@ export default {
         clicked(){
            console.log('gf');
         },
-        inEmail(a){
-            console.log(this.email.to);
-        },
-        inSubtitle(a){
-            console.log(this.email.subtitle);
-        },
-        inSubject(a){
-            console.log(this.email.subject);
+        save(){
+            console.log(this.email);
+            emailsService.save(this.email)
+            eventBus.$emit('update-emails')
         }
       
     },
@@ -42,5 +44,6 @@ export default {
   
     },
     components: {
+        emailsService
     },
   };

@@ -1,0 +1,21 @@
+.pinned-notes {
+    display: flex;
+    padding: 1em;
+    list-style: none;
+}
+
+.pinned-notes>* {
+    padding: 5px;
+    margin: 5px;
+}
+
+.keep-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.keep-header {
+    width: 1200px;
+    display: flex;
+}

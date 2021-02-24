@@ -4,15 +4,15 @@ import { keepService } from "../../services/keep.service.js";
 export default {
     props: ['notes'],
     template: `
-    <section class="notes-container">
-            <ul>
-                <li v-for="note in notes" :key="note.id" :style="setColor" >
-                    {{note.header}} : {{note.text}} {{updateCurrNote(note)}}
-                    <input type="color" @blur="changeColor(note.id, $event)">
-                    <button @click="sendDelete(note.id)">X</button>
+            <ul class="notes-text-container">
+                <li v-for="note in notes" :key="note.id" :style="setColor" class="text-card" >
+                    {{note.header}} : {{note.text}}
+                    <div class="edit-card">
+                        <input type="color" @blur="changeColor(note.id, $event)">
+                        <button @click="sendDelete(note.id)">X</button>
+                    </div>    
                 </li>
             </ul>
-    </section>
     `,
     data() {
         return {
@@ -30,12 +30,17 @@ export default {
         changeColor(id, ev) {
             const color = ev.target.value
             keepService.colorChange(id, color)
+                .then(note => {
+                    this.updateCurrNote(note)
+                    console.log(this.currNote);
+                    this.currNote.color = color
+                })
             eventBus.$emit('note-update')
         }
     },
     computed: {
         setColor() {
-            // console.log('this.currNote:', this.currNote)
+            console.log('this.currNote:', this.currNote)
             return `background-color: ${this.currNote.color};`;
         }
     },

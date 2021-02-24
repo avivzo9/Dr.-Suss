@@ -1,0 +1,13 @@
+.text-card {
+    display: flex;
+    margin: 10px;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notes-text-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+}

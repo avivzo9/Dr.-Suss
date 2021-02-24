@@ -15,21 +15,21 @@ var gNotes = [{
         id: storageService.makeId(),
         header: 'CSS',
         text: 'Do some work on CSS',
-        color: 'blue',
+        color: '#ffca7b',
         isPinned: false
     },
     {
         id: storageService.makeId(),
         header: 'JS',
         text: 'Make ToDo List',
-        color: 'green',
+        color: '#ffca7b',
         isPinned: false
     },
     {
         id: storageService.makeId(),
         header: 'HTML',
         text: 'HTML is useless',
-        color: 'red',
+        color: '#ffca7b',
         isPinned: false
     },
 ]
@@ -55,20 +55,18 @@ function addNote(note) {
 
 function deleteNote(id) {
     return storageService.remove(KEY, id)
-        .then(() => {
-            return
-        })
 }
 
 
 function getNoteById(id) {
-    return storageService.get(KEY, id);
+    return storageService.get(KEY, id)
 }
 
 function colorChange(id, color) {
-    return getNoteById(id)
+    return storageService.get(KEY, id)
         .then(note => {
             note.color = color
             storageService.put(KEY, note)
+            return note
         })
 }

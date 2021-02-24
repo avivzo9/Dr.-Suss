@@ -32,7 +32,6 @@ export default {
     computed: {
         notesToShow() {
             if (!this.search) return this.notes;
-            console.log('Enter');
             const searchStr = this.search.toLowerCase()
             const notesToShow = this.notes.filter(note => {
                 return note.header.toLowerCase().includes(searchStr)

@@ -1,3 +1,15 @@
 * {
     box-sizing: border-box;
 }
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+}
+
+.sub-container {
+    max-width: 1200px;
+}

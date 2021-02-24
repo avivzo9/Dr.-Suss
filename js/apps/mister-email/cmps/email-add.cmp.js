@@ -15,7 +15,6 @@ export default {
   methods: {
     addNewEmail(){
       this.isClicked=true;
-      console.log('this.isClicked:', this.isClicked)
     }
   },
 

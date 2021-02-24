@@ -1,46 +1,48 @@
+import { eventBus } from '../services/email-event-bus.service.js';
 import { emailsService } from '../services/email.service.js'
+import emailPreview from './email-preview.cmp.js'
+import {storageService} from '../../../services/async-storage-service.js' 
 export default {
     template: `
-    <ul class="email-list">
-        <li  v-for="email in emails">
-            <h2>{{email.subject}}</h2>
-            <h3>{{email.body}}</h3>
-            <!-- <h4>{{}}</h4> -->
-            <h3>{{getTime(email.sentAt)}}</h3>
-        </li>
-    </ul>
+    <email-preview :emails="emails"/>
     `,
     data() {
         return {
             emails: []
-
         }
     },
     methods: {
         fetchEmails() {
-            emailsService.getEmails()
+
+            // emailsService.getEmails()
+            emailsService.query()
                 .then((emails) => {
+                    console.log('emails:', emails)
+                    // this.emails=JSON.parse(JSON.stringify(emails))
                     this.emails = emails
+                    console.log('this.emails:', this.emails)                
                 })
+
                 .catch((err) => {
                     console.log('err:', err)
                 })
         },
-        getTime(timestemp) {
-           var time= new Date(timestemp).toISOString().slice(0, 19).replace('T', ' ');
-            return time
-        }
+        
     },
 
     computed: {
     },
+
     created() {
         this.fetchEmails()
-        setTimeout(() => {
-            console.log(this.emails);
-        }, 1000)
+        eventBus.$on('update-emails',this.fetchEmails)
+    },
+    destroyed() {
+        eventBus.$off('update-emails',this.fetchEmails)
     },
     components: {
-        emailsService
+        emailsService,
+        storageService,
+        emailPreview
     },
 };

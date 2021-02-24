@@ -1,5 +1,5 @@
 import { storageService } from '../../../services/async-storage-service.js'
-
+import { utillService } from '../../../services/util.service.js'
 const KEY = 'notes'
 
 export const keepService = {
@@ -33,12 +33,8 @@ function query() {
     return storageService.query(KEY)
         .then(notes => {
             if (!notes || !notes.length) {
-                _saveToStorage(KEY, gNotes)
+                utillService.saveToStorage(KEY, gNotes)
                 return gNotes
             } else return notes;
         })
-}
-
-function _saveToStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value) || null);
 }

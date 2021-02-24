@@ -1,4 +1,4 @@
-import searchFilters from '../cmps/search-filters.js'
+import searchFilters from './email-search-filter.cmp.js'
 export default {
     template: `
    <header class="app-header">
@@ -9,8 +9,8 @@ export default {
         <button>options</button>
     </header>
     `,
-   components: {
-    searchFilters,
-},
+    components: {
+        searchFilters,
+    },
 
 }

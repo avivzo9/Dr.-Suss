@@ -4,11 +4,11 @@ export default {
         <form @submit.prevent="addBook">
             <input v-if="!isClicked" type="text" placeholder="Write note" @click="open" >
             <input v-if="isClicked" v-model="note.header" type="text" placeholder="header" >
-            <button>📌</button>
+            <button v-if="isClicked">📌</button>
             <textarea v-if="isClicked" v-model="note.text" cols="30" rows="15" placeholder="write note"></textarea>
-            <input type="color" v-model="note.color">
-            <button>save</button>
-            <button>cancel</button>
+            <input v-if="isClicked" type="color" v-model="note.color">
+            <button v-if="isClicked">save</button>
+            <button v-if="isClicked">cancel</button>
         </form>
     </section>
     `,

@@ -1,10 +1,10 @@
 import { bookService } from '../services/book-service.js';
 import bookFilter from '../cmps/book-filter.cmp.js';
 import bookList from '../cmps/book-list.cmp.js';
-import bookDetails from '../pages/book-details.cmp.js';
+import bookDetails from './book-details.cmp.js';
 import bookAdd from '../cmps/book-add.cmp.js'
 import { eventBus } from '../services/event-bus-service.js';
- 
+
 
 export default {
     template: `
@@ -28,7 +28,7 @@ export default {
         loadBooks() {
             bookService.query()
                 .then(books => this.books = books)
-                
+
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
@@ -36,31 +36,31 @@ export default {
         removeBook(id) {
             console.log('id:', id)
             bookService.remove(id)
-            .then(this.loadBooks)
+                .then(this.loadBooks)
         },
         selectBook(book) {
             this.selectedBook = book;
             console.log(book);
         },
-        addBook(newBook){
+        addBook(newBook) {
             this.books.push(newBook);
             bookService.save(newBook)
-                
-                .then((book) => {
-                    const msg = {
-                        txt: 'Book saved succesfully',
-                        type: 'success',
-                    };
-                    eventBus.$emit('show-msg', msg);
-                }).catch(err=>{
-                    console.log(err);
-                    const msg = {
-                        txt: err.message,
-                        type: 'error'
-                    }
-                    eventBus.$emit('show-msg', msg)
-                })
-            
+
+            .then((book) => {
+                const msg = {
+                    txt: 'Book saved succesfully',
+                    type: 'success',
+                };
+                eventBus.$emit('show-msg', msg);
+            }).catch(err => {
+                console.log(err);
+                const msg = {
+                    txt: err.message,
+                    type: 'error'
+                }
+                eventBus.$emit('show-msg', msg)
+            })
+
 
 
         }

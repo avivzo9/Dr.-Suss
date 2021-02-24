@@ -8,17 +8,22 @@ const routes = [{
         component: homePage
     },
     {
-        path: '/email',
-        component: emailPage
+        path: '/miss-book',
+        component: missBooks
     },
+    // Book details
     {
         path: '/keep',
         component: keepPage
     },
     {
-        path: '/miss-book',
-        component: missBooks
+        path: '/email/:folder',
+        component: emailPage
     },
+    // {
+    //     path: '/email/:folder/:emailId',
+    //     component: emailDetails
+    // },
 ]
 
 

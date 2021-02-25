@@ -12,6 +12,8 @@ export default {
                 <button v-if="isClicked">📌</button>
                 <textarea v-if="isClicked" v-model="note.text" cols="30" rows="15" placeholder="write note"></textarea>
                 <input v-if="isClicked" type="color" v-model="note.color">
+                <label v-if="isClicked" class="custom-file-upload">
+                <input v-if="isClicked" @change="imgLoad" name="img-upload" type="file"/>Upload Image</label>
                 <button v-if="isClicked">save</button>
                 <button v-if="isClicked" @click="close">cancel</button>
             </form>
@@ -25,8 +27,10 @@ export default {
                 header: '',
                 text: '',
                 color: '',
-                isPinned: false
-            }
+                src: '',
+                isPinned: false,
+                type: ''
+            },
         }
     },
     methods: {
@@ -56,7 +60,22 @@ export default {
                 .then(() => {
                     this.$emit('note-update')
                 })
-        }
+        },
+        imgLoad(e) {
+            const image = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = e => {
+                this.note.src = e.target.result;
+                this.note.type = "img"
+                console.log(this.note.src);
+            };
+        },
+        setImg(imgSrc) {
+            this.note.src = imgSrc
+            console.log('note.src:', this.note.src)
+            this.note.type = 'img'
+        },
     },
     created() {
         eventBus.$on('note-delete', this.sendDeleteNote)

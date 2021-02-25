@@ -1,19 +1,24 @@
-import textType from './keep-types/keep-text.cmp.js'
+import keepImgTypeCmp from './keep-types/keep-img-type.cmp.js'
+import keepTextCmp from './keep-types/keep-text-type.cmp.js'
 
 export default {
     props: ['notes'],
     template: `
     <section>
-                <text-type v-if="type === 'text'" :notes="notes" />
+            <div v-for="note in notes" :key="note.id">
+                <keep-text-cmp v-if="note.type === 'text'" :note="note"  />
+                <keep-img-type-cmp v-if="note.type === 'img'" :note="note" />
+            </div>
     </section>
     `,
-    data() {
-        return {
-            type: 'text'
-        }
-    },
-    methods: {},
     components: {
-        textType
+        keepTextCmp,
+        keepImgTypeCmp
     },
+    created() {
+        setTimeout(() => {
+            // console.log(this.notes);
+
+        }, 100);
+    }
 }

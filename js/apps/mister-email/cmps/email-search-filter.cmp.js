@@ -4,10 +4,10 @@ export default {
   template: `
   <section>
       <input @input="searching()" type="search" placeHolder="search email" v-model="search">
-      <input type="radio" name="read" value="read" v-model="radio" @click="picked">
-      <label for="male">read</label>
-      <input type="radio" name="unread" value="unread" v-model="radio" @click="picked">
-      <label for="female">unread</label>
+      <input type="radio" id="read" name="read" value="read" v-model="radio" @click="picked">
+      <label for="read">read</label>
+      <input type="radio" id="unread" name="unread" value="unread" v-model="radio" @click="picked">
+      <label for="unread">unread</label>
   </section> 
     `,
   data() {

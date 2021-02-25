@@ -9,7 +9,7 @@ export default {
     template: `
     <section>
         <ul class="email-list">
-            <li class="email-specific-email" @click="isclicked(email)" v-for="email in emails">
+            <li :class="readBackColor(email)" class="email-specific-email" @click="isclicked(email)" v-for="email in emails">
                 <h4 v-if="!email.isOpen" :class="readUnread">{{email.to}}</h4>
                 <h2 v-if="!email.isOpen">{{email.subject}}</h2>
                 <h3 v-if="!email.isOpen">{{getTime(email.sentAt)}}</h3>
@@ -42,11 +42,16 @@ export default {
 
                 })
         },
+        readBackColor(email) {
+            console.log('email:', email.isRead)
+            return { read: (email.isRead===true), unread: (email.isRead===false) }
+        },
 
     },
     computed: {
         readUnread() {
             // return {read: email. ,unread:   }
         },
+       
     }
 }

@@ -3,24 +3,27 @@ export default {
   template: `
   <section>
            <button @click="addNewEmail">add new email</button>
-           <new-email-modal v-if="isClicked"/>
+           <new-email-modal @close-modal="modalClose" v-if="isClicked"/>
   </section> 
   `,
   data() {
     return {
-      // emails: []
-      isClicked:false
+      isClicked: false
     }
   },
   methods: {
-    addNewEmail(){
-      this.isClicked=true;
-    }
+    addNewEmail() {
+      this.isClicked = true;
+    },
+    modalClose() {
+      this.isClicked=false;
+    },
   },
 
   computed: {
   },
   created() {
+
 
   },
   components: {

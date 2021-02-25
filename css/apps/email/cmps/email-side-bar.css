@@ -1,11 +1,74 @@
-.email-side-bar{
+.email-side-bar {
     width: 15%;
     flex-direction: column;
 }
-.email-side-bar >*{
-    display:flex;
+
+.email-side-bar>* {
+    display: flex;
     width: 100%;
 }
-.email-side-bar button{
+
+.email-side-bar button {
     width: 100%;
+}
+
+.new-mail-modal-contaier {
+    display: flex;
+    bottom: 0;
+    left: 18.2vw;
+    position: fixed;
+    width: 24em;
+    height: 27em;
+    box-shadow: 0 20px 8px 3px #404040;
+
+}
+
+.new-mail-modal input {
+    width: 100%;
+    height: 2.5em;
+    border: none;
+}
+.new-mail-modal :nth-child(1) {
+    height: 2.5em;
+}
+
+.new-mail-modal :nth-child(2) {
+    height: 2.5em;
+    border-bottom: 1px solid black;
+}
+
+.new-mail-modal :nth-child(4) {
+    height: 21.5em;
+    width: 100%;
+    border-bottom: 0;
+    border-right: 0 ;
+    border-left: 0;
+    border-top: 1px solid black;
+    resize: none;
+}
+
+.new-mail-modal :nth-child(5) {
+    height: 2.5em;
+    box-shadow: 0 -5px 0px 0.1px white;
+    background-color: white;
+    border: none;
+    border-top: 1px solid black;
+}
+
+.new-mail-modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 15px 15px 0 0;
+    background-color:#404040;
+    color: #CDCDCD;
+    font-size: 1.1em;
+}
+.new-mail-modal-header button {
+    width: 30px;
+    background-color:inherit;
+    border: none;
 }

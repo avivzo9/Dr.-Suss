@@ -1,0 +1,29 @@
+.app-header-container {
+    background-color: cadetblue;
+    height: 100px;
+}
+
+.app-header-sub-container {
+    align-items: center;
+    padding: 1em;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.nav-content {
+    height: 100%;
+    align-items: center;
+    color: white;
+    font-size: 17px;
+}
+
+.nav-content>* {
+    padding: 1em;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.app-header-sub-container>h1 {
+    font-size: 25px;
+}

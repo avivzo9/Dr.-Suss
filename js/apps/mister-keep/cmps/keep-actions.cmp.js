@@ -20,5 +20,5 @@ export default {
                     eventBus.$emit('note-update')
                 })
         }
-    }
+    },
 }

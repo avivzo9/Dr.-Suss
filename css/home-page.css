@@ -1,1 +1,4 @@
-/* base.css */
+.home-page-screen {
+    height: 100vh;
+    background-color: burlywood;
+}

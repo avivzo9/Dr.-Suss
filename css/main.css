@@ -4,6 +4,8 @@
 
 /* Common Pages */
 
+@import 'home-page.css';
+@import 'app-header.css';
 
 /* Common Cmps */
 
@@ -12,6 +14,4 @@
 /* Apps */
 
 @import 'apps/keep/keep-main.css';
-@import 'apps/email/pages/email-app.css';
-
-/* @import 'apps/keep/email-main.css'; */
+@import 'apps/email/email-main.css';

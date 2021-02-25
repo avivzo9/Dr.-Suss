@@ -1,0 +1,11 @@
+.email-side-bar{
+    width: 15%;
+    flex-direction: column;
+}
+.email-side-bar >*{
+    display:flex;
+    width: 100%;
+}
+.email-side-bar button{
+    width: 100%;
+}

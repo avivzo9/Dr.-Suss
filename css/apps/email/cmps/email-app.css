@@ -2,7 +2,10 @@
     flex-direction: column;
 }
 
-
-.email-horizontal-container{
-
+.mail-horizon-container{
+    justify-content: space-between;
+}
+.email-list-container{
+    margin-top: 0;
+    width: 100%;
 }

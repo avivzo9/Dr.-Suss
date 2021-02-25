@@ -5,21 +5,21 @@ const EMAILS_KEY = 'EMAILS';
 export const emailsService = {
     getEmails,
     getNextEmailId,
-    save,
+    addEmail,
     getById,
-    remove,
+    removeEmail,
     query
 };
 
 var gEmails = [
-    { to: 'hadar@gmail.com', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1551133930594 },
-    { to: 'aviv@gmail.com', subject: 'Wassap?', body: 'im coollll', isRead: false, sentAt: 1551133830594 },
-    { to: 'roni@gmail.com', subject: 'hey?', body: 'lollll!', isRead: true, sentAt: 1551133930589 },
-    { to: 'ido@gmail.com', subject: 'hfvh', body: 'thx for asking', isRead: false, sentAt: 1551133630594 },
-    { to: 'oshri@gmail.com', subject: 'sdve?', body: 'im coollll', isRead: true, sentAt: 1551131330594 },
-    { to: 'avi@gmail.com', subject: 'dtyjuykf ty hd h', body: 'Pick up!', isRead: false, sentAt: 1551133230594 },
-    { to: 'avital@gmail.com', subject: ' ggw regwrg gergw eg', body: 'im coollll', isRead: true, sentAt: 1551133930594 },
-    { to: 'avivit@gmail.com', subject: 'ad matai', body: 'Pick up!', isRead: true, sentAt: 1558332430594 },
+    { to: 'hadar@gmail.com', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1551133930594, isOpen: false , id:utillService.makeId()},
+    { to: 'aviv@gmail.com', subject: 'Wassap?', body: 'im coollll', isRead: false, sentAt: 1551133830594, isOpen: false , id:utillService.makeId()},
+    { to: 'roni@gmail.com', subject: 'hey?', body: 'lollll!', isRead: true, sentAt: 1551133930589, isOpen: false , id:utillService.makeId()},
+    { to: 'ido@gmail.com', subject: 'hfvh', body: 'thx for asking', isRead: false, sentAt: 1551133630594, isOpen: false , id:utillService.makeId()},
+    { to: 'oshri@gmail.com', subject: 'sdve?', body: 'im coollll', isRead: true, sentAt: 1551131330594, isOpen: false , id:utillService.makeId()},
+    { to: 'avi@gmail.com', subject: 'dtyjuykf ty hd h', body: 'Pick up!', isRead: false, sentAt: 1551133230594, isOpen: false , id:utillService.makeId()},
+    { to: 'avital@gmail.com', subject: ' ggw regwrg gergw eg', body: 'im coollll', isRead: true, sentAt: 1551133930594, isOpen: false , id:utillService.makeId()},
+    { to: 'avivit@gmail.com', subject: 'ad matai', body: 'Pick up!', isRead: true, sentAt: 1558332430594, isOpen: false , id:utillService.makeId()},
 ];
 
 function getEmails() {
@@ -34,22 +34,24 @@ function getEmails() {
         });
 }
 
-function remove(emailId) {
+function removeEmail(emailId) {
     return storageService.remove(EMAILS_KEY, emailId);
 }
 function getById(id) {
     return storageService.get(EMAILS_KEY, id);
 }
 
-function save(email) {
+function addEmail(email) {
     if (!email.id) email.id = storageService.makeId()
-    query()
+    return query()
         .then(emails => {
             emails.push(email)
             utillService.saveToStorage(EMAILS_KEY, emails);
             return emails;
         })
+        
 }
+
 // function save(email) {
 //     query()
 //         .then(emails => {

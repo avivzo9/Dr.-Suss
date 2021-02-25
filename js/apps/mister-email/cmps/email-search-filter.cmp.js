@@ -1,11 +1,28 @@
+import { eventBus } from "../../mister-keep/services/keep-event-bus.service.js"
+
 export default {
-    template: `
+  template: `
   <section>
-      <input type="text" name="" id="">
-           <button>all</button>
+  <form @input.prevent="searching">
+      <input type="search" placeHolder="search email" v-model="search">
+  </form>
+           <!-- <button>all</button> -->
   </section> 
     `,
-   components: {
-},
+  data() {
+    return {
+      search: '',
+    }
+  },
+  methods: {
+    searching() {
+      eventBus.$emit('searched-email', this.search)
+    },
+  },
+  computed: {
 
+  },
+  components: {
+
+  },
 }

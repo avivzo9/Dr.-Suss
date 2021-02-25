@@ -2,9 +2,7 @@ import { eventBus } from "../services/keep-event-bus.service.js"
 
 export default {
     template: `
-    <section class="notes-container">
-            <input type="search" placeholder="Search" @input="setSearch" v-model="searchNote">
-    </section>
+            <input type="search" placeholder="Search" @input="setSearch" name="search-input" v-model="searchNote">
     `,
     data() {
         return {

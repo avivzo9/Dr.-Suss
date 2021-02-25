@@ -1,21 +1,23 @@
-.pinned-notes {
-    display: flex;
-    padding: 1em;
-    list-style: none;
-}
-
-.pinned-notes>* {
-    padding: 5px;
-    margin: 5px;
-}
-
 .keep-header-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    height: 50px;
+    padding: 1em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .keep-header {
-    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.keep-header h1 {
+    font-size: 20px;
+}
+
+.pinned-notes {
     display: flex;
+    cursor: pointer;
+}
+
+.pinned-notes>* {
+    padding: 1em;
 }

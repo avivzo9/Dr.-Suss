@@ -42,3 +42,7 @@ ul {
 .flex {
     display: flex;
 }
+
+input:focus {
+    outline: 1px solid black;
+}

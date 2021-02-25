@@ -10,7 +10,7 @@ export default {
                 <li>Pinned notes</li>
                 <li>Unpinned notes</li>
             </ul>
-            <button class="app-picker">☰</button>
+            <!-- <button class="app-picker">☰</button> -->
         </div>
     </section>
     `,

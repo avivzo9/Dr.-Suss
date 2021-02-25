@@ -1,3 +1,27 @@
+.add-note-container {
+    height: 100px;
+}
+
+.add-note {
+    align-items: center;
+}
+
 input[name=img-upload] {
     display: none;
+}
+
+.add-types {}
+
+.text-box {
+    width: 45em;
+    height: 2em;
+}
+
+.text-box-area {
+    width: 45em;
+    height: 4em;
+}
+
+.text-box-header {
+    width: 45em;
 }

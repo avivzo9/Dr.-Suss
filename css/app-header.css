@@ -1,6 +1,7 @@
 .app-header-container {
     background-color: cadetblue;
     height: 100px;
+    margin: 0 auto;
 }
 
 .app-header-sub-container {

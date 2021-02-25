@@ -4,19 +4,25 @@ import keepAddListCmp from "./keep-add-list.cmp.js";
 
 export default {
     template: `
-    <section class="container">
-        <div class="sub-container">
+    <section class="add-note-container container">
+        <div class="add-note sub-container">
             <form @submit.prevent="addNote" v-if="!isList">
-                <input v-if="!isClicked" type="text" placeholder="Write note" @click="open" >
-                <input v-if="isClicked" v-model="note.header" type="text" placeholder="header" >
-                <button v-if="isClicked">📌</button>
-                <textarea v-if="isClicked" v-model="note.text" cols="30" rows="15" placeholder="write note"></textarea>
-                <input v-if="isClicked" type="color" v-model="note.color">
-                <label v-if="isClicked" class="custom-file-upload">
-                <input v-if="isClicked" @change="imgLoad" name="img-upload" type="file"/>Upload Image</label>
-                <button @click="changeToList">List</button>
-                <button v-if="isClicked">save</button>
-                <button v-if="isClicked" @click="close">cancel</button>
+                <div class="add-types flex">
+                    <input class="text-box-header" v-if="!isClicked" type="text" placeholder="Write note" @click="open" >
+                    <button @click="changeToList">List</button>
+                </div>
+                <div class="header-pin flex">
+                    <input class="text-box" v-if="isClicked" v-model="note.header" type="text" placeholder="header" >
+                    <button v-if="isClicked">📌</button>
+                </div>
+                <textarea class="text-box-area" v-if="isClicked" v-model="note.text" cols="70" rows="2" placeholder="write note"></textarea>
+                <div class="note-edit flex">
+                    <input v-if="isClicked" type="color" v-model="note.color">
+                    <label v-if="isClicked" class="custom-file-upload">
+                    <input v-if="isClicked" @change="imgLoad" name="img-upload" type="file"/>Upload Image</label>
+                    <button v-if="isClicked">save</button>
+                    <button v-if="isClicked" @click="close">cancel</button>
+                </div>
             </form>
             <keep-add-list-cmp v-if="isList" @send-list-add="changeToList" />
         </div>

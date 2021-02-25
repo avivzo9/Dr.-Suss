@@ -1,0 +1,9 @@
+input[name=search-input] {
+    width: 40em;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    border-right: 1px solid rgba(128, 128, 128, 0.5);
+    border-left: 1px solid rgba(128, 128, 128, 0.5);
+    font-size: 15px;
+}

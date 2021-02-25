@@ -13,7 +13,7 @@ export default {
     </div>
     <ul class="email-list">
         <li @click="isclicked(email)" style="border: 1px solid black" v-for="email in emails">
-            <h4 v-if="!email.isOpen">{{email.to}}</h4>
+            <h4 v-if="!email.isOpen" :class="readUnread">{{email.to}}</h4>
             <h2 v-if="!email.isOpen">{{email.subject}}</h2>
             <h3 v-if="!email.isOpen">{{getTime(email.sentAt)}}</h3>
             <div v-if="email.isOpen">
@@ -38,7 +38,7 @@ export default {
             return time
         },
         isclicked(email) {
-            this.currEmail = email;
+            // this.currEmail = email;
             if (email.isOpen === true) email.isOpen = false
             else email.isOpen = true
         },
@@ -48,8 +48,12 @@ export default {
                         eventBus.$emit('update-emails')
 
                     })
-        }
+        },
+      
     },
     computed: {
+        readUnread(){
+            // return {read: email. ,unread:   }
+                    },
     }
 }

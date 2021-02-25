@@ -11,6 +11,7 @@ export default {
         return {
             emails: [],
             search: null,
+            readUnread: ''
         }
     },
     methods: {
@@ -26,16 +27,31 @@ export default {
         },
         setSearch(searchEmail) {
             this.search = searchEmail;
-            console.log('email-list-L29');
+        },
+        setReadUnread(readUnread) {
+            this.readUnread = readUnread;
         }
     },
     computed: {
         emailsToShow() {
-            console.log('enter');
-            if (!this.search) return this.emails;
+            if (this.readUnread === 'read') var readUnreadStr = true
+            else if (this.readUnread === 'unread') readUnreadStr = false
+            if (!this.search && !this.readUnread) return this.emails;//אין סינון כלל
+            if (!this.search) {//יש רק רדיוס
+                const emailsToShow = this.emails.filter(email => {
+                    return (email.isRead === readUnreadStr)
+                })
+                return emailsToShow;
+            }
             const searchStr = this.search.toLowerCase()
-            const emailsToShow = this.emails.filter(email => {
-                return email.body.toLowerCase().includes(searchStr)
+            if (!this.readUnread) {//רק תיבת חיפוש
+                const emailsToShow = this.emails.filter(email => {
+                    return email.body.toLowerCase().includes(searchStr)
+                })
+                return emailsToShow;
+            }
+            const emailsToShow = this.emails.filter(email => {//גם רדיוס וגם תיבת חיפוש
+                return email.body.toLowerCase().includes(searchStr)&&(email.isRead === readUnreadStr)     
             })
             return emailsToShow;
         }
@@ -45,10 +61,14 @@ export default {
         this.fetchEmails()
         eventBus.$on('update-emails', this.fetchEmails)
         eventBus.$on('searched-email', this.setSearch)
+        eventBus.$on('read-email', this.setReadUnread)
+        eventBus.$on('unread-email', this.setReadUnread)
     },
     destroyed() {
         eventBus.$off('update-emails', this.fetchEmails)
         eventBus.$off('searched-email', this.setSearch)
+        eventBus.$off('read-email', this.setReadUnread)
+        eventBus.$off('unread-email', this.setReadUnread)
     },
     components: {
         emailsService,

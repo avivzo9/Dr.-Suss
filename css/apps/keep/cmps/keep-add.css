@@ -1,5 +1,6 @@
 .add-note-container {
-    height: 100px;
+    height: 120px;
+    margin-top: 20px;
 }
 
 .add-note {
@@ -10,18 +11,54 @@ input[name=img-upload] {
     display: none;
 }
 
-.add-types {}
-
 .text-box {
     width: 45em;
     height: 2em;
-}
-
-.text-box-area {
-    width: 45em;
-    height: 4em;
+    padding: 12px;
 }
 
 .text-box-header {
-    width: 45em;
+    width: 42.4em;
+    border: none;
+    border-left: 1px solid rgba(128, 128, 128, 0.5);
+    border-top: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 12px;
+}
+
+.text-box-area {
+    width: 45.63em;
+    height: 4em;
+    border: none;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 12px;
+    resize: none;
+    font-family: cursive;
+}
+
+.pin-note-btn {
+    padding: 12px;
+    border: none;
+    background-color: inherit;
+    border-left: none;
+    border-top: 1px solid rgba(128, 128, 128, 0.5);
+    border-right: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.note-edit-container {
+    padding: 7px;
+    justify-content: space-between;
+}
+
+.note-edit {
+    width: 50%;
+}
+
+.note-save-cancel {
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.note-save-cancel>* {
+    border: none;
+    background-color: inherit;
 }

@@ -6,10 +6,12 @@ import { keepService } from '../services/keep.service.js'
 
 export default {
     template: `
-    <section>
-        <keep-header-cmp />
-        <keep-add-note-cmp @note-update="loadNotes" />
-        <keep-list :notes="notesToShow" />
+    <section class="keep-app-main">
+        <div class="keep-app-second">
+            <keep-header-cmp />
+            <keep-add-note-cmp @note-update="loadNotes" />
+            <keep-list :notes="notesToShow" />
+        </div>
     </section>
     `,
     data() {

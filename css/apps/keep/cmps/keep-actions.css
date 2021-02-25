@@ -1,0 +1,13 @@
+.action-panel {
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 20px;
+}
+
+.action-panel>* {
+    border: none;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(128, 128, 128, 0.3);
+    margin-left: 5px;
+}

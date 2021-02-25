@@ -4,8 +4,9 @@ import keepText from './keep-types/keep-text-type.cmp.js'
 export default {
     props: ['notes'],
     template: `
-    <section>
-        <div v-for="note in notes" :key="note.id">
+    <section class="notes-grid sub-container">
+        <div v-for="note in notes" :key="note.id" class="card flex" :style="{'background-color': note.color }">
+            <h3 class="note-header">{{note.header}}</h3>
             <component :is="currentTypeComponent(note)" :note="note" ></component>
         </div>
     </section>

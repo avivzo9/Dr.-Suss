@@ -9,13 +9,12 @@ export const keepService = {
     getNoteById,
     deleteNote,
     colorChange,
-    loadImageFromInput
 }
 
 var gNotes = [{
         id: storageService.makeId(),
         header: 'CSS',
-        text: 'Do some work on CSS',
+        text: 'Do some work on CSS.',
         color: '#ffca7b',
         isPinned: false,
         type: 'keepText'
@@ -23,15 +22,32 @@ var gNotes = [{
     {
         id: storageService.makeId(),
         header: 'JS',
-        text: 'Make ToDo List',
+        text: 'Make ToDo List.',
         color: '#ffca7b',
         isPinned: false,
         type: 'keepText'
     },
     {
         id: storageService.makeId(),
+        header: 'After CSS.',
+        text: 'Be like:',
+        color: '#ffca7b',
+        isPinned: false,
+        src: 'img/my-meme.jpeg',
+        type: 'keepImg'
+    },
+    {
+        id: storageService.makeId(),
         header: 'HTML',
-        text: 'HTML is useless',
+        text: 'HTML is useless.',
+        color: '#ffca7b',
+        isPinned: false,
+        type: 'keepText'
+    },
+    {
+        id: storageService.makeId(),
+        header: 'Samples',
+        text: 'Send samples to the lab, and try it on others 😈.',
         color: '#ffca7b',
         isPinned: false,
         type: 'keepText'
@@ -74,15 +90,4 @@ function colorChange(id, color) {
             storageService.put(KEY, note)
             return note
         })
-}
-
-function loadImageFromInput(ev, onImageReady) {
-    var reader = new FileReader()
-
-    reader.onload = function(event) {
-        var img = new Image()
-        img.onload = onImageReady.bind(null, img)
-        img.src = event.target.result
-    }
-    reader.readAsDataURL(ev.target.files[0])
 }

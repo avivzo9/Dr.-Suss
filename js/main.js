@@ -8,7 +8,7 @@ const options = {
         <section>
             <app-header />
             <router-view />
-            <footer><p>&copy; copyrights 2021</p></footer>
+            <!-- <footer><p>&copy; copyrights 2021</p></footer> -->
         </section>
     `,
     components: {

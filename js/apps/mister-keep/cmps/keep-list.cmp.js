@@ -3,7 +3,7 @@ import notePreview from './keep-preview.cmp.js'
 export default {
     props: ['notes'],
     template: `
-    <section>
+    <section class="notes-container container">
         <note-preview :notes="notes" />
     </section>
     `,

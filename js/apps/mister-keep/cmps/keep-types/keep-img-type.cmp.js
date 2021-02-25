@@ -3,12 +3,11 @@ import keepActionsCmp from "../keep-actions.cmp.js"
 export default {
     props: ['note'],
     template: `
-            <ul class="notes-text-container">
-                <li :style="{'background-color': note.color }" >
-                    <img class="keep-img" :src="note.src" alt="" />
-                    <keep-actions-cmp :note="note" />
-                </li>
-            </ul>
+            <div class="img-type flex">
+                <p v-if="note.text">{{note.text}}</p>
+                <img class="keep-img" :src="note.src" alt="" />
+                <keep-actions-cmp :note="note" />
+            </div>
     `,
     components: {
         keepActionsCmp

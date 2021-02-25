@@ -7,21 +7,25 @@ export default {
     <section class="add-note-container container">
         <div class="add-note sub-container">
             <form @submit.prevent="addNote" v-if="!isList">
-                <div class="add-types flex">
-                    <input class="text-box-header" v-if="!isClicked" type="text" placeholder="Write note" @click="open" >
+                <div class="add-types flex" v-if="!isClicked">
+                    <input class="text-box" type="text" placeholder="Write note" @click="open" >
                     <button @click="changeToList">List</button>
                 </div>
-                <div class="header-pin flex">
-                    <input class="text-box" v-if="isClicked" v-model="note.header" type="text" placeholder="header" >
-                    <button v-if="isClicked">📌</button>
+                <div class="header-pin flex" v-if="isClicked">
+                    <input required class="text-box-header" v-model="note.header" type="text" placeholder="header" >
+                    <button class="pin-note-btn">📌</button>
                 </div>
-                <textarea class="text-box-area" v-if="isClicked" v-model="note.text" cols="70" rows="2" placeholder="write note"></textarea>
-                <div class="note-edit flex">
-                    <input v-if="isClicked" type="color" v-model="note.color">
-                    <label v-if="isClicked" class="custom-file-upload">
-                    <input v-if="isClicked" @change="imgLoad" name="img-upload" type="file"/>Upload Image</label>
-                    <button v-if="isClicked">save</button>
-                    <button v-if="isClicked" @click="close">cancel</button>
+                <textarea class="text-box-area" v-if="isClicked" v-model="note.text" placeholder="write note"></textarea>
+                <div class="note-edit-container flex" v-if="isClicked">
+                    <div class="note-edit flex">
+                        <input type="color" v-model="note.color">
+                        <label class="custom-file-upload">
+                        <input @change="imgLoad" name="img-upload" type="file"/>Upload Image</label>
+                    </div>
+                    <div class="note-save-cancel flex">
+                        <button @click="close">cancel</button>
+                        <button>save</button>
+                    </div>
                 </div>
             </form>
             <keep-add-list-cmp v-if="isList" @send-list-add="changeToList" />
@@ -50,7 +54,7 @@ export default {
             this.isClicked = false;
         },
         addNote() {
-            if (!this.note.header) return
+            this.note.type = 'keepText'
             if (this.note.color === '') this.note.color === 'white'
             this.$emit('color-changed', this.note.color)
             keepService.addNote(this.note)

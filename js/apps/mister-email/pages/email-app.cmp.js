@@ -5,7 +5,7 @@ import emailsContainer from '../cmps/email-list.cmp.js'
 
 export default {
     template: `
-    <section>
+    <section class="email-page container">
         <nav-email-header/> 
         <div class="email-horizontal-container">
             <nav-email-side/>  

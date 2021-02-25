@@ -2,22 +2,43 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0 auto;
+}
+
 button {
     cursor: pointer;
+}
+
+button:focus {
+    outline: none;
 }
 
 .container {
     display: flex;
     width: 100%;
+    margin: 0 auto;
     justify-content: center;
 }
 
 .sub-container {
     display: flex;
-    max-width: 1200px;
+    width: 1200px;
+    margin: 0 auto;
     justify-content: center;
 }
 
 ul {
     list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.router-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.flex {
+    display: flex;
 }

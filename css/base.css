@@ -7,11 +7,15 @@ button {
 }
 
 .container {
+    display: flex;
     width: 100%;
+    justify-content: center;
 }
 
 .sub-container {
+    display: flex;
     max-width: 1200px;
+    justify-content: center;
 }
 
 ul {

@@ -1,6 +1,5 @@
 import keepActionsCmp from "../keep-actions.cmp.js"
 
-
 export default {
     props: ['note'],
     template: `
@@ -14,5 +13,10 @@ export default {
     components: {
         keepActionsCmp
     },
+    created() {
+        setTimeout(() => {
+            console.log(this.note);
 
+        }, 100);
+    }
 }

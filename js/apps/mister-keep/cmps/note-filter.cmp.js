@@ -3,9 +3,7 @@ import { eventBus } from "../services/keep-event-bus.service.js"
 export default {
     template: `
     <section class="notes-container">
-            <form @input.prevent="setSearch">
-                <input type="search" placeholder="Search" v-model="searchNote">
-            </form>
+            <input type="search" placeholder="Search" @input="setSearch" v-model="searchNote">
     </section>
     `,
     data() {

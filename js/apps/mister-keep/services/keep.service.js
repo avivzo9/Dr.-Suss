@@ -18,7 +18,7 @@ var gNotes = [{
         text: 'Do some work on CSS',
         color: '#ffca7b',
         isPinned: false,
-        type: 'text'
+        type: 'keepText'
     },
     {
         id: storageService.makeId(),
@@ -26,7 +26,7 @@ var gNotes = [{
         text: 'Make ToDo List',
         color: '#ffca7b',
         isPinned: false,
-        type: 'text'
+        type: 'keepText'
     },
     {
         id: storageService.makeId(),
@@ -34,7 +34,7 @@ var gNotes = [{
         text: 'HTML is useless',
         color: '#ffca7b',
         isPinned: false,
-        type: 'text'
+        type: 'keepText'
     },
 ]
 

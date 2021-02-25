@@ -57,3 +57,7 @@ a {
 input:focus {
     outline: 1px solid black;
 }
+
+input[type=checkbox]:focus {
+    outline: none;
+}

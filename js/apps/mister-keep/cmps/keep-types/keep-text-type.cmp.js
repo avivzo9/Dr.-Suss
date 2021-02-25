@@ -11,10 +11,4 @@ export default {
     components: {
         keepActionsCmp
     },
-    created() {
-        setTimeout(() => {
-            console.log(this.note);
-
-        }, 100);
-    }
 }

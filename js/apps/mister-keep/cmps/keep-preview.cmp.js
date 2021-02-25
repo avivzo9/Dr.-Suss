@@ -1,6 +1,6 @@
 import keepImg from './keep-types/keep-img-type.cmp.js'
+import keepList from './keep-types/keep-list-type.cmp.js';
 import keepText from './keep-types/keep-text-type.cmp.js'
-
 export default {
     props: ['notes'],
     template: `
@@ -18,7 +18,8 @@ export default {
     },
     components: {
         keepText,
-        keepImg
+        keepImg,
+        keepList
     },
     created() {
         setTimeout(() => {

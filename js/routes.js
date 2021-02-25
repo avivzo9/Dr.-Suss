@@ -11,7 +11,6 @@ const routes = [{
         path: '/miss-book',
         component: bookApp
     },
-    // Book details
     {
         path: '/keep',
         component: keepApp
@@ -21,8 +20,8 @@ const routes = [{
         component: emailApp
     },
     // {
-    //     path: '/email/:folder/:emailId',
-    //     component: emailDetails
+    //     path: '/about',
+    //     component: about
     // },
 ]
 

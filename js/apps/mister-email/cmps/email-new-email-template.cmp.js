@@ -1,6 +1,8 @@
 
-import { emailsService } from "../services/email.service.js";
 import {eventBus} from "../services/email-event-bus.service.js"
+import { utillService } from "../../../services/util.service.js";
+import { emailsService } from "../services/email.service.js";
+
 
 export default {
     template: `
@@ -10,7 +12,6 @@ export default {
             <input type="text" placeholder="subject"  v-model="email.subject" />
             <input type="text" placeholder="body" v-model="email.body"/>
             <button @click="save">send</button>
-            <button @click="clicked">garbage</button>
         </form>
         </section>
     `,
@@ -22,7 +23,9 @@ export default {
             subject:'',
             body:'',
             isRead:false,
-            sentAt: Date.now()
+            sentAt: Date.now(),
+            isOpen:false,
+            id:utillService.makeId(),
        }
       }
     },
@@ -31,9 +34,10 @@ export default {
            console.log('gf');
         },
         save(){
-            console.log(this.email);
-            emailsService.save(this.email)
-            eventBus.$emit('update-emails')
+            emailsService.addEmail(this.email)
+            .then(()=>{
+                eventBus.$emit('update-emails')
+            })
         }
       
     },

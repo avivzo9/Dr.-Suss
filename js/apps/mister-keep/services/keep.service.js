@@ -10,7 +10,8 @@ export const keepService = {
     deleteNote,
     colorChange,
     switchLineCheck,
-    updateEditNote
+    updateEditNote,
+    updateNewEditNote
 }
 
 var gNotes = [{
@@ -72,7 +73,7 @@ function query() {
 }
 
 function addNote(note) {
-    if (!note.type) note.type = 'text'
+    if (!note.type) note.type = 'keepText'
     if (!note.color) note.color = '#ffca7b'
     if (!note.id) note.id = utillService.makeId()
     if (!note.header) note.header = 'Keep in mind.'
@@ -117,6 +118,17 @@ function updateEditNote(id) {
         .then(note => {
             note.isEdit = (note.isEdit) ? false : true
             storageService.put(KEY, note)
+            return note
+        })
+}
+
+function updateNewEditNote(newNote, note) {
+    return storageService.get(KEY, note.id)
+        .then(note => {
+            note = newNote
+            note.isEdit = false
+            storageService.put(KEY, note)
+            console.log('note:', note)
             return note
         })
 }

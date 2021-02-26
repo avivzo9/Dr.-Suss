@@ -68,7 +68,6 @@ export default {
             this.isClicked = false;
         },
         addNote() {
-            this.note.type = 'keepText'
             if (this.note.color === '') this.note.color === 'white'
             this.$emit('color-changed', this.note.color)
             keepService.addNote(this.note)
@@ -100,7 +99,7 @@ export default {
         },
         setImg(imgSrc) {
             this.note.src = imgSrc
-            this.note.type = 'img'
+            this.note.type = 'keepImg'
         },
         changeToList() {
             this.isList = true;

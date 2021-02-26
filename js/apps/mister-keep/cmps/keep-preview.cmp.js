@@ -12,15 +12,18 @@ export default {
             <h3 class="note-header">{{note.header}}</h3>
             <component :is="currentTypeComponent(note)" :note="note" ></component>
             <div>
-                <input v-if="note.isEdit" type="text" placeholder="Header Update">
-                <input v-if="note.isEdit" type="text" placeholder="Text Update">
+                <input v-if="note.isEdit" v-model="noteNew.header" type="text" placeholder="Header Update">
+                <input v-if="note.isEdit" v-model="noteNew.text" @keyup.enter="newNoteUpdate(note)" type="text" placeholder="Text Update">
             </div>
         </div>
     </section>
     `,
     data() {
         return {
-            newNote: '',
+            noteNew: {
+                header: '',
+                text: ''
+            }
         }
     },
     methods: {
@@ -33,11 +36,17 @@ export default {
                     eventBus.$emit('note-update')
                 })
         },
-        newNoteUpdate() {
-            console.log('this.note:', this.note)
-            var newNote = JSON.parse(JSON.stringify(this.note))
-            console.log('newNote:', newNote)
-
+        newNoteUpdate(note) {
+            console.log('note:', note)
+            var newNote = JSON.parse(JSON.stringify(note))
+            newNote.text = this.noteNew.text
+            newNote.header = this.noteNew.header
+            keepService.updateNewEditNote(newNote, note)
+                .then(() => {
+                    this.noteNew.text = '';
+                    this.noteNew.header = '';
+                    eventBus.$emit('note-update')
+                })
         }
     },
     components: {
@@ -47,8 +56,6 @@ export default {
     },
     created() {
         eventBus.$on('note-edit', this.editNoteOpen)
-        setTimeout(() => { console.log(this.newNote) }, 500)
-        this.newNoteUpdate()
     },
     destroyed() {
         eventBus.$off('note-edit', this.editNoteOpen)

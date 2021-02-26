@@ -33,6 +33,7 @@ input[name=img-upload] {
     padding: 12px;
     resize: none;
     font-family: cursive;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .pin-note-btn {
@@ -40,6 +41,7 @@ input[name=img-upload] {
     border: none;
     background-color: inherit;
     border-left: none;
+    background-color: rgba(255, 255, 255, 0.2);
     border-top: 1px solid rgba(128, 128, 128, 0.5);
     border-right: 1px solid rgba(128, 128, 128, 0.5);
 }

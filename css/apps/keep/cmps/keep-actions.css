@@ -1,13 +1,26 @@
 .action-panel {
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: flex-end;
-    height: 20px;
+    position: relative;
+    bottom: 0;
 }
 
 .action-panel>* {
     border: none;
     height: 30px;
     width: 30px;
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: #ffca7b;
     margin-left: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.action-panel>*:hover {
+    box-shadow: 0 0 8px 1px black;
+}
+
+.edit-btn {
+    font-size: 20px;
+    font-weight: 600;
 }

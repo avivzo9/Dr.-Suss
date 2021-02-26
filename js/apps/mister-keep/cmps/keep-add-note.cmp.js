@@ -31,7 +31,7 @@ export default {
             <div v-if="isList" class="flex">
                 <div >
                     <input required v-model="list.header" type="text" placeholder="header">
-                    <keep-add-list-cmp @delete-list-line="deleteListLine" @add-list-line="addlistLine" v-for="num in listCount" v-if="isList" @send-list-add="changeToList" />
+                    <keep-add-list-cmp @check-line="switchCheck" @add-list-line="addlistLine" v-for="num in listCount" v-if="isList" @send-list-add="changeToList" />
                     <button @click="addList">Save</button>
                 </div>
             </div>
@@ -58,7 +58,6 @@ export default {
                 type: 'keepList',
             },
             date: null,
-            // todo = {text: 'todo', date: Date.now()}
         }
     },
     methods: {
@@ -108,15 +107,9 @@ export default {
         },
         addlistLine(todo) {
             this.updateListDate()
-            this.list.todos.push({ id: todo.id, text: todo.text, doneAt: this.date })
+            this.list.todos.push({ id: todo.id, text: todo.text, doneAt: this.date, isDone: false })
             console.log('before delete - this.list.todos:', this.list.todos)
             this.listCount += 1;
-        },
-        deleteListLine(id) {
-            var idx = this.list.todos.findIndex((todo) => { return todo.id === id })
-            console.log('Enter delete!');
-            this.list.todos.splice(idx, 1)
-            console.log('after delete - this.list.todos:', this.list.todos)
         },
         addList() {
             keepService.addNote(this.list)
@@ -127,13 +120,23 @@ export default {
         updateListDate() {
             const currentdate = new Date()
             this.date = currentdate.getDay() + '/' + currentdate.getMonth() + '/' + currentdate.getFullYear() + ' , ' + currentdate.getHours() + ':' + currentdate.getMinutes()
+        },
+        switchCheck(todo) {
+            if (!todo.isDone) todo.isDone = true
+            else todo.isDone = false
+            keepService.switchLineCheck()
+                .then(() => {
+                    eventBus.$emit('note-update')
+                })
         }
     },
     created() {
         eventBus.$on('note-delete', this.sendDeleteNote)
+        eventBus.$on('check-line', this.switchCheck)
     },
     destroyed() {
         eventBus.$off('note-delete', this.sendDeleteNote)
+        eventBus.$off('check-line', this.switchCheck)
     },
     components: {
         keepAddListCmp

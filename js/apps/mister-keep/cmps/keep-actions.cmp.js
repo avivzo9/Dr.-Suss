@@ -7,6 +7,7 @@ export default {
         <div class="action-panel flex">
             <input type="color" @blur="changeColor(note.id, $event)">
             <button @click="sendDelete(note.id)">X</button>
+            <button @click="sendEditNote(note.id)" class="edit-btn">🖊</button>
         </div>
     `,
     methods: {
@@ -19,6 +20,9 @@ export default {
                 .then(() => {
                     eventBus.$emit('note-update')
                 })
+        },
+        sendEditNote(id) {
+            eventBus.$emit('note-edit', id)
         }
     },
 }

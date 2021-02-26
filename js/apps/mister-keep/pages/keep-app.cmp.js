@@ -44,6 +44,9 @@ export default {
     created() {
         this.loadNotes()
         eventBus.$on('note-update', this.loadNotes)
+        eventBus.$on('note-update', () => {
+            console.log('notes updated!');
+        })
         eventBus.$on('searched', this.setSearch)
     },
     destroyed() {

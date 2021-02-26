@@ -1,3 +1,4 @@
+import { eventBus } from "../../services/keep-event-bus.service.js";
 import keepActionsCmp from "../keep-actions.cmp.js"
 
 export default {
@@ -5,8 +6,7 @@ export default {
     template: `
             <div class="text-card flex">
                 <ul>
-                    <li v-for="todo in note.todos" :key="note.id">
-                    <input type="checkbox" >
+                    <li v-for="todo in note.todos" :key="todo.id" :class="doneClass(todo.isDone)" @click="sendCheck(todo)">
                         {{todo.text}}
                     </li>
                 </ul>
@@ -14,6 +14,14 @@ export default {
                 <keep-actions-cmp :note="note" />
             </div>
     `,
+    methods: {
+        sendCheck(todo) {
+            eventBus.$emit('check-line', todo)
+        },
+        doneClass(isDone) {
+            return (isDone) ? 'note-done' : 'note-undone';
+        }
+    },
     components: {
         keepActionsCmp
     },

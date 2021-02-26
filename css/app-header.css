@@ -2,6 +2,7 @@
     border-bottom: 1px solid black;
     height: 100px;
     margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .app-header-sub-container {
@@ -17,6 +18,7 @@
     color: black;
     font-weight: 600;
     font-size: 19px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-content>* {
@@ -25,8 +27,9 @@
     display: flex;
     align-items: center;
 }
-.nav-content>*:hover{
-    text-shadow:-4px -3px 4px rgba(53,32,119,0.37);
+
+.nav-content>*:hover {
+    text-shadow: -4px -3px 4px rgba(53, 32, 119, 0.37);
 }
 
 .app-header-sub-container>h1 {

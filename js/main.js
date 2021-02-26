@@ -5,10 +5,9 @@ const options = {
     el: '#app',
     router: myRouter,
     template: `
-        <section>
+        <section class="suess-home-page-container container">
             <app-header />
             <router-view />
-            <!-- <footer><p>&copy; copyrights 2021</p></footer> -->
         </section>
     `,
     components: {

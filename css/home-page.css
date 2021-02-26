@@ -1,4 +1,30 @@
-.home-page-screen {
-    height: 100vh;
-    background-color: burlywood;
-}
+    .suess-home-page-container {
+        display: block;
+        height: 38rem;
+        font-family: cursive;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .suess-home-page {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .app-h1 {
+        font-size: 40px;
+        font-weight: 900;
+        color: black;
+    }
+    
+    .apps-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: 500px;
+        text-align: center;
+        margin-top: 25px;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 40px;
+        border: 3px solid black;
+    }

@@ -1,12 +1,12 @@
 .app-header-container {
-    background-color: cadetblue;
+    border-bottom: 1px solid black;
     height: 100px;
     margin: 0 auto;
 }
 
 .app-header-sub-container {
     align-items: center;
-    padding: 1em;
+    /* padding: 1em; */
     justify-content: space-between;
     height: 100px;
 }
@@ -14,15 +14,19 @@
 .nav-content {
     height: 100%;
     align-items: center;
-    color: white;
-    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    font-size: 19px;
 }
 
 .nav-content>* {
-    padding: 1em;
+    padding: 1em 0 1em 2em;
     height: 100px;
     display: flex;
     align-items: center;
+}
+.nav-content>*:hover{
+    text-shadow:-4px -3px 4px rgba(53,32,119,0.37);
 }
 
 .app-header-sub-container>h1 {

@@ -59,11 +59,7 @@ export default {
             this.$router.push('/book');
         },
         removeReview(id) {
-            console.log('id:', id);
-
-            console.log('book:', this.book);
             this.book.reviews = this.book.reviews.filter((review) => {
-                console.log('review:', review);
                 return review.id !== id;
             });
             bookService.save(this.book).then((book) => {
@@ -101,7 +97,6 @@ export default {
         },
         nextBookLink() {
             const nextId = bookService.getNextBookId(this.book.id);
-            console.log('nextId:', nextId);
             return '/book/' + nextId;
         },
     },
@@ -111,7 +106,6 @@ export default {
     },
     created() {
         const id = this.$route.params.bookId;
-        // console.log('id:', id);
         bookService.getById(id).then((book) => (this.book = book));
     },
     watch: {

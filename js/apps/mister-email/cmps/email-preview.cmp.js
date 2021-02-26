@@ -52,8 +52,6 @@ export default {
                 })
         },
         readClosedEmail(email) {
-            console.log('email:', email)
-            if(email.isRead === true && email.isOpen === true ) console.log('f'); 
             return { readAndOpen: (email.isRead === true && email.isOpen === true)
                 , readAndClose: (email.isRead === true && email.isOpen === false)
                 , unreadAndOpen: (email.isRead === false && email.isOpen === true)

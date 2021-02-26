@@ -62,11 +62,11 @@ p {
     /* background-color: rgba(206, 233, 211, 0.9); */
 }
 
-.logo {
+.book-logo {
     margin-inline-start: 40px;
 }
 
-nav {
+.app-header nav {
     margin-inline-end: 40px;
 }
 

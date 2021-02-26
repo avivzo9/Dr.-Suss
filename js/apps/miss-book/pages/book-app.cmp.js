@@ -9,12 +9,10 @@ import { eventBus } from '../services/event-bus-service.js';
 export default {
     template: `
         <section class="book-app">
-
             <book-filter @filtered="setFilter"/>
             <book-add @addbook="addBook"/> 
             <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> 
             <book-list  @selected="selectBook" @removeBook="removeBook" :books="booksToShow"/> 
-           
         </section>
     `,
     data() {
@@ -28,19 +26,16 @@ export default {
         loadBooks() {
             bookService.query()
                 .then(books => this.books = books)
-
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
         removeBook(id) {
-            console.log('id:', id)
             bookService.remove(id)
                 .then(this.loadBooks)
         },
         selectBook(book) {
             this.selectedBook = book;
-            console.log(book);
         },
         addBook(newBook) {
             this.books.push(newBook);
@@ -76,7 +71,6 @@ export default {
                     book.title.toLowerCase().includes(searchStr) &&
                     searchByPrice === ''
                 ) {
-                    console.log('hello');
                     return this.books;
                 }
 

@@ -65,7 +65,6 @@ export default {
         },
     },
     mounted() {
-        // console.log('mounted');
         this.$refs.nameInput.focus();
     },
 };

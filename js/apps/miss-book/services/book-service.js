@@ -402,7 +402,6 @@ function getBooks() {
 }
 
 function remove(bookId) {
-    console.log(' Remove bookId:', bookId);
     return storageService.remove(BOOKS_KEY, bookId);
 }
 function getById(id) {
@@ -419,7 +418,6 @@ function save(book) {
 
 function addReview(bookId, review) {
     return getById(bookId).then((book) => {
-        console.log('book433:', book);
         book.reviews.push(review);
         return storageService.put(BOOKS_KEY, book);
     });

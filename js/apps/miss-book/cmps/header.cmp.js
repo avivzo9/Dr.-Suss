@@ -1,7 +1,7 @@
 export default {
     template: `
    <header class="app-header">
-       <div class="logo">
+       <div class="book-logo">
            <h1>Books</h1>
        </div>
        <nav>

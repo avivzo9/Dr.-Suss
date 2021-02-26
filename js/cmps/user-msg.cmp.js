@@ -22,7 +22,6 @@ export default {
     },
     created() {
         eventBus.$on('show-msg', () => {
-            console.log(';;;;');
         })
         // eventBus.$on('show-msg', this.setMsg)
     },

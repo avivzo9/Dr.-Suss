@@ -7,7 +7,7 @@ export default {
                <h1>emails</h1>
             </div>
             <search-filters/>
-            <button>options</button>
+            <button style="visibility: hidden;">options</button>
         </header>
     </section>
     `,

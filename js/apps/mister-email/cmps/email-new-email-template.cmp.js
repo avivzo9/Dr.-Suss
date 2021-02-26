@@ -10,7 +10,7 @@ export default {
         <form class="new-mail-modal" @submit.prevent.stop="happens">
             <div class="new-mail-modal-header">   
                 <button @click="closeModal">X</button>
-                <label>new massage</label>
+                new massage
             </div>
             <input type="email" placeholder="to"  v-model="email.to" required />
             <input type="text" placeholder="subject"  v-model="email.subject" />
@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         happens() {
-
+            
         },
         save() {
             if(this.email.to.includes('@')){
@@ -59,7 +59,7 @@ export default {
                 // .then(() => {
                 //     eventBus.$emit('update-emails')
                 // })
-                // this.$emit('close-modal', this.closePressed)
+                this.$emit('close-modal', this.closePressed)
             }else console.log('errrrrrror');
             
             

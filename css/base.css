@@ -8,6 +8,11 @@
 
 body {
     margin: 0 auto;
+    background-image: url('../../../../img/wallpaper.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 button {

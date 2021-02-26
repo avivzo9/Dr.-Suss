@@ -9,12 +9,16 @@ export default {
     template: `
     <section>
         <ul class="email-list">
-            <li :class="readBackColor(email)" class="email-specific-email" @click="isclicked(email)" v-for="email in emails">
-                <h4 v-if="!email.isOpen" :class="readUnread">{{email.to}}</h4>
-                <h2 v-if="!email.isOpen">{{email.subject}}</h2>
-                <h3 v-if="!email.isOpen">{{getTime(email.sentAt)}}</h3>
-                <div  class="email-specific-email-body" v-if="email.isOpen">{{email.body}}</div>
-                <button class="email-specific-email-body" v-if="email.isOpen" @click.prevent.stop="deleteEmail(email)">garbage</button>
+            <li :class="readClosedEmail(email)"  class="email-specific-email" @click="isclicked(email)" v-for="email in emails">
+                <div class="email-specific-email-top">
+                    <h2 class="align-self"> {{email.to}}  <span>  ----{{email.subject}}</span></h2>
+                    <!-- <h4 class="align-self">{{email.to}}</h4> -->
+                    <h3 class="align-self">{{getTime(email.sentAt)}}</h3>
+                    <button class="email-garbage-can"  v-if="email.isOpen" @click.prevent.stop="deleteEmail(email)">🗑</button>
+                </div>
+                <div class="email-specific-email-body" v-if="email.isOpen">   
+                    <div  v-if="email.isOpen">{{email.body}}</div>
+                </div>
             </li>
         </ul>
     </section>
@@ -31,9 +35,14 @@ export default {
             return time
         },
         isclicked(email) {
-            // this.currEmail = email;
-            if (email.isOpen === true) email.isOpen = false
-            else email.isOpen = true
+            if (email.isOpen === true) {
+                email.isRead = true;
+                email.isOpen = false
+            }
+            else {
+                email.isRead = true;
+                email.isOpen = true
+            }
         },
         deleteEmail(email) {
             emailsService.removeEmail(email.id)
@@ -42,16 +51,18 @@ export default {
 
                 })
         },
-        readBackColor(email) {
-            console.log('email:', email.isRead)
-            return { read: (email.isRead===true), unread: (email.isRead===false) }
+        readClosedEmail(email) {
+            console.log('email:', email)
+            if(email.isRead === true && email.isOpen === true ) console.log('f'); 
+            return { readAndOpen: (email.isRead === true && email.isOpen === true)
+                , readAndClose: (email.isRead === true && email.isOpen === false)
+                , unreadAndOpen: (email.isRead === false && email.isOpen === true)
+            ,unreadAndClose: (email.isRead === false && email.isOpen === false)}
         },
 
     },
     computed: {
-        readUnread() {
-            // return {read: email. ,unread:   }
-        },
-       
+     
+
     }
 }

@@ -67,10 +67,12 @@ function query() {
 function addNote(note) {
     if (!note.type) note.type = 'text'
     if (!note.color) note.color = '#ffca7b'
+    if (!note.id) note.id = utillService.makeId()
     return query()
         .then(notes => {
             notes.push(note)
             utillService.saveToStorage(KEY, notes)
+            console.log('notes:', notes)
             return notes;
         })
 }

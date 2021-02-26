@@ -8,7 +8,7 @@
 
 body {
     margin: 0 auto;
-    background-image: url('../../../../img/wallpaper.jpeg');
+    background-image: url('../../../../img/newLarge.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -74,4 +74,8 @@ input[type=radio] {
 
 input[type=checkbox]:focus {
     outline: none;
+}
+
+input[type=text] {
+    background-color: rgba(255, 255, 255, 0.2);
 }

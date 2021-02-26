@@ -38,8 +38,7 @@ export default {
             if (email.isOpen === true) {
                 email.isRead = true;
                 email.isOpen = false
-            }
-            else {
+            } else {
                 email.isRead = true;
                 email.isOpen = true
             }
@@ -52,15 +51,22 @@ export default {
                 })
         },
         readClosedEmail(email) {
+
             return { readAndOpen: (email.isRead === true && email.isOpen === true)
                 , readAndClose: (email.isRead === true && email.isOpen === false)
                 , unreadAndOpen: (email.isRead === false && email.isOpen === true)
             ,unreadAndClose: (email.isRead === false && email.isOpen === false)}
+            // return {
+            //     readAndOpen: (email.isRead === true && email.isOpen === true),
+            //     readAndClose: (email.isRead === true && email.isOpen === false),
+            //     unreadAndOpen: (email.isRead === false && email.isOpen === true),
+            //     unreadAndClose: (email.isRead === false && email.isOpen === false)
+            // }
         },
 
     },
     computed: {
-     
+
 
     }
 }

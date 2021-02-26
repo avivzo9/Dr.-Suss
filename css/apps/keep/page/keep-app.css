@@ -6,3 +6,7 @@
 .keep-app-second {
     height: 100%;
 }
+
+input[type=color] {
+    border: 10px double;
+}

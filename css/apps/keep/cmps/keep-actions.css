@@ -9,7 +9,8 @@
     border: none;
     height: 30px;
     width: 30px;
-    background-color: #ffca7b;
+    background-color: inherit;
+    opacity: 1;
     margin-left: 5px;
     cursor: pointer;
     border-radius: 20px;

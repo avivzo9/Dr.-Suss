@@ -4,7 +4,7 @@ export default {
        
         <form @submit.prevent="setFilter">
             <input type="text"  v-model="filterBy.byTitle" placeholder="Search By Name"/>
-            <input type="number"  v-model.number="filterBy.byPrice" placeholder="Search By Price" />
+            <input type="number"  v-model.number="filterBy.byPrice" placeholder="what's your limit" />
             <button class="filter-btn">Check</button>
             </form>
         </section>

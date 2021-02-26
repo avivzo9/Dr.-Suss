@@ -59,7 +59,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(206, 233, 211, 0.9);
+    /* background-color: rgba(206, 233, 211, 0.9); */
 }
 
 .logo {

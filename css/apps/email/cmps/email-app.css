@@ -1,5 +1,13 @@
 .email-page{
     flex-direction: column;
+ 
+
+}
+button , input , textarea{
+    font-family: cursive;
+}
+textarea:focus{
+ outline: none;
 }
 
 .mail-horizon-container{

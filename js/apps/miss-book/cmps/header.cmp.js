@@ -1,6 +1,6 @@
 export default {
     template: `
-   <header class="app-header">
+   <header class="app-header sub-container">
        <div class="book-logo">
            <h1>Books</h1>
        </div>

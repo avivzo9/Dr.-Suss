@@ -22,6 +22,28 @@
     /* outline: 10px red solid; */
     /* position: relative; */
 }
+.email-specific-email :hover{
+    /* box-shadow: inset 8px 80px 33px -49px rgba(35,27,27,0.65); */
+/* background-color: red; */
+}
+
+
+.readAndClose :hover, .unreadAndClose :hover {
+    box-shadow: 0 -30px 32px -35px rgba(35,27,27,0.74) inset;
+    border-bottom:1px solid black;
+}
+
+.readAndClose *> :hover {
+    box-shadow: none;
+    border-bottom:none;
+
+}
+
+.unreadAndClose *> :hover {
+    box-shadow: none;
+    border-bottom:none;
+
+}
 
 .email-specific-email-top {
     width: 100%;
@@ -44,6 +66,11 @@
     font-size: 21px;
     font-family: 'Merriweather', serif;
     margin-left: 75px;
+    color: black
+}
+
+.email-specific-email-top h3 {
+    color: black
 }
 
 .email-specific-email:first-child {
@@ -82,6 +109,7 @@
     overflow: auto;
     justify-content: space-around;
     padding: 15px;
+    color: black;
 }
 
 .email-garbage-can {

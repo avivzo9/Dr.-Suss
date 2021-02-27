@@ -6,14 +6,16 @@
 
 .app-header-sub-container {
     align-items: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
     justify-content: space-between;
     height: 100px;
 }
 
 .nav-content {
+    text-align: center;
     height: 100%;
     align-items: center;
+    justify-content: center;
     color: black;
     font-weight: 600;
     font-size: 19px;
@@ -30,9 +32,14 @@
 .nav-content>*:hover {
     text-shadow: -4px -3px 4px rgba(53, 32, 119, 0.37);
     color: wheat;
-    /* font-size: 20px; */
 }
 
-.app-header-sub-container>h1 {
+.app-header-home {
     font-size: 25px;
+    font-weight: 600;
+}
+
+.app-header-home:hover {
+    text-shadow: -4px -3px 4px rgba(53, 32, 119, 0.37);
+    color: wheat;
 }

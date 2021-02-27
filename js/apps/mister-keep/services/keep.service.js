@@ -93,15 +93,7 @@ var gNotes = [{
         isEdit: false,
         type: 'keepText'
     },
-    {
-        id: storageService.makeId(),
-        header: 'JS.',
-        text: 'Make ToDo List.',
-        color: '#ffca7b',
-        isPinned: false,
-        isEdit: false,
-        type: 'keepText'
-    },
+
     {
         id: storageService.makeId(),
         header: 'Dont forget!',

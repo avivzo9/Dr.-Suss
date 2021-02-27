@@ -28,9 +28,9 @@ export default {
                     </div>
                 </div>
             </form>
-            <div v-if="isList" class="flex">
-                <div >
-                    <input required v-model="list.header" type="text" placeholder="header">
+            <div v-if="isList">
+                <div class="keep-add-list-container">
+                    <input class="add-list-header" required v-model="list.header" type="text" placeholder="header">
                     <keep-add-list-cmp @check-line="switchCheck" @add-list-line="addlistLine" v-for="num in listCount" v-if="isList" @send-list-add="changeToList" />
                     <button @click="addList">Save</button>
                 </div>

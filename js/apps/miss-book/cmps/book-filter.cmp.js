@@ -1,11 +1,10 @@
 export default {
     template: `
         <section class="book-filter">
-       
-        <form @submit.prevent="setFilter">
-            <input type="text"  v-model="filterBy.byTitle" placeholder="Search By Name"/>
-            <input type="number"  v-model.number="filterBy.byPrice" placeholder="what's your limit" />
-            <button class="filter-btn">Check</button>
+            <form @submit.prevent="setFilter">
+                <input class="book-search-input" type="text"  v-model="filterBy.byTitle" placeholder="Search By Name"/>
+                <input class="book-search-input" type="number"  v-model.number="filterBy.byPrice" placeholder="what's your limit?" />
+                <button class="filter-btn">Check</button>
             </form>
         </section>
     `,

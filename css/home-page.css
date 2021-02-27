@@ -18,13 +18,15 @@
 
     .apps-nav {
         display: grid;
-        grid-template-columns: repeat(3, 400px);
+        grid-template-columns: repeat(4, 340px);
         grid-template-rows: 500px;
         text-align: center;
         margin-top: 25px;
         justify-content: space-around;
         align-items: center;
+        color: white;
         font-size: 40px;
+<<<<<<< HEAD
         border: 3px solid black;
     }
 
@@ -47,4 +49,11 @@
         height: 300px;
         border-radius: 50%;
         border: 1px solid black;
+=======
+    }
+    
+    .apps-nav>* {
+        padding-top: 250px;
+        padding-bottom: 250px;
+>>>>>>> 7e4db6d68ca80f350fb008b27971d52e5fd0d1f1
     }

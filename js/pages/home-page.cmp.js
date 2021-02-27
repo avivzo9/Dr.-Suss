@@ -6,6 +6,8 @@ export default {
                     <router-link class="router-link" to="/email">Email app</router-link>
                     <router-link class="router-link" to="/keep">Miss Keep</router-link>
                     <router-link class="router-link" to="/miss-book">Miss Book</router-link>
+                    <h1>    dsfvhndjlv</h1>
+                    <router-link class="router-link" to="/about">about</router-link>
                 </div>
             </div>
     `,

@@ -29,7 +29,8 @@
 
 .nav-content>*:hover {
     text-shadow: -4px -3px 4px rgba(53, 32, 119, 0.37);
-    font-size: 20px;
+    color: wheat;
+    /* font-size: 20px; */
 }
 
 .app-header-sub-container>h1 {

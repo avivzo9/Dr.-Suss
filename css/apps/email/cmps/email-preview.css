@@ -15,7 +15,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 5px;
+    padding: 5px 0 0 0;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
 
 .readAndClose :hover, .unreadAndClose :hover {
     box-shadow: 0 -30px 32px -35px rgba(35,27,27,0.74) inset;
-    border-bottom:1px solid black;
+    /* border-bottom:1px solid black; */
 }
 
 .readAndClose *> :hover {
@@ -53,7 +53,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 8px;
+    padding: 9px;
 }
 
 .email-specific-email-top h2 span {
@@ -65,7 +65,7 @@
 .email-specific-email-top h2 {
     font-size: 21px;
     font-family: 'Merriweather', serif;
-    margin-left: 75px;
+    margin-left: 30px;
     color: black
 }
 

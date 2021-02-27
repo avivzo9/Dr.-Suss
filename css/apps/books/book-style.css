@@ -72,8 +72,11 @@
 
 .book-add-list {
     background-color: white;
+    opacity: 0.5;
 }
-
+.book-add-list >*{
+    padding: 10px;
+}
 
 /* HOME PAGE */
 

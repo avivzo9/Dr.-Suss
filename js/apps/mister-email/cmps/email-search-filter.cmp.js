@@ -8,6 +8,8 @@ export default {
       <label for="read">read</label>
       <input type="radio" id="unread" name="unread" value="unread" v-model="radio" @click="picked">
       <label for="unread">unread</label>
+      <input type="radio" id="all" name="all" value="all" v-model="radio" @click="picked">
+      <label for="all">all</label>
   </section> 
     `,
   data() {
@@ -25,6 +27,7 @@ export default {
       this.readUnread=ev.toElement.name
       if(this.readUnread==='read') eventBus.$emit('read-email', this.readUnread)
       else if(this.readUnread==='unread') eventBus.$emit('unread-email', this.readUnread)
+      else if(this.readUnread==='all') eventBus.$emit('all-email', this.readUnread)
       
 
     },

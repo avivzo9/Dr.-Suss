@@ -26,14 +26,13 @@
         align-items: center;
         color: white;
         font-size: 40px;
-<<<<<<< HEAD
         border: 3px solid black;
     }
 
     /* about */
 
     .about-imgs-container {
-        margin-top: 100px;
+        margin-top: 50px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -49,11 +48,9 @@
         height: 300px;
         border-radius: 50%;
         border: 1px solid black;
-=======
     }
     
     .apps-nav>* {
         padding-top: 250px;
         padding-bottom: 250px;
->>>>>>> 7e4db6d68ca80f350fb008b27971d52e5fd0d1f1
     }

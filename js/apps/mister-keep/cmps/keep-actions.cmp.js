@@ -6,7 +6,7 @@ export default {
     template: `
         <div class="action-panel flex">
             <input type="color" @blur="changeColor(note.id, $event)">
-            <button @click="sendDelete(note.id)">X</button>
+            <button @click="sendDelete(note.id)" class="edit-btn">🗑</button>
             <button @click="sendEditNote(note.id)" class="edit-btn">🖊</button>
         </div>
     `,

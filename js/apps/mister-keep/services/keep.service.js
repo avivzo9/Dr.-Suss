@@ -16,8 +16,8 @@ export const keepService = {
 
 var gNotes = [{
         id: storageService.makeId(),
-        header: 'Grocery list',
-        text: 'Untill 30/4',
+        header: 'Grocery list.',
+        text: 'Untill 30/4.',
         color: '#ffca7b',
         isPinned: false,
         todos: [
@@ -49,12 +49,12 @@ var gNotes = [{
     },
     {
         id: storageService.makeId(),
-        header: 'After CSS.',
-        text: 'Be like:',
+        header: 'Vue JS.',
+        text: 'Master it!',
         color: '#ffca7b',
         isPinned: false,
         isEdit: false,
-        src: 'img/my-meme.jpeg',
+        src: 'img/vue-picture.jpeg',
         type: 'keepImg'
     },
     {
@@ -68,7 +68,7 @@ var gNotes = [{
     },
     {
         id: storageService.makeId(),
-        header: 'Samples',
+        header: 'Samples.',
         text: 'Send samples to the lab, and try it on others 😈.',
         color: 'lightblue',
         isPinned: false,
@@ -77,7 +77,7 @@ var gNotes = [{
     },
     {
         id: storageService.makeId(),
-        header: 'Take medication 💉',
+        header: 'Take medication 💉.',
         text: 'Every day, 10:00 AM.',
         color: '#ffca7b',
         isPinned: false,
@@ -104,15 +104,14 @@ var gNotes = [{
     },
     {
         id: storageService.makeId(),
-        header: 'Vue JS.',
-        text: 'Master it!',
+        header: 'After CSS.',
+        text: 'Be like:',
         color: '#ffca7b',
         isPinned: false,
         isEdit: false,
-        src: 'img/vue-picture.jpeg',
+        src: 'img/my-meme.jpeg',
         type: 'keepImg'
     },
-
 ]
 
 function query() {

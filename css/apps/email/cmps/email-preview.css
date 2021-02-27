@@ -15,21 +15,15 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 5px;
+    padding: 5px 0 0 0;
     height: 300px;
     display: flex;
     flex-direction: column;
 }
 
-.email-specific-email :hover {
-    /* box-shadow: inset 8px 80px 33px -49px rgba(35,27,27,0.65); */
-    /* background-color: red; */
-}
-
 .readAndClose :hover,
 .unreadAndClose :hover {
     box-shadow: 0 -30px 32px -35px rgba(35, 27, 27, 0.74) inset;
-    border-bottom: 1px solid black;
 }
 
 .readAndClose *> :hover {
@@ -50,7 +44,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 8px;
+    padding: 9px;
 }
 
 .email-specific-email-top h2 span {
@@ -62,7 +56,7 @@
 .email-specific-email-top h2 {
     font-size: 21px;
     font-family: 'Merriweather', serif;
-    margin-left: 75px;
+    margin-left: 30px;
     color: black
 }
 

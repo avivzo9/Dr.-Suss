@@ -19,7 +19,8 @@ export default {
 
     methods: {
         searchBook() {
-            const newBook = bookService.ask(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${this.term}`)
+            if(this.term==='') this.books=[];
+             else var newBook = bookService.ask(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${this.term}`)
                 .then(res => {
                     res.items.map(book => {
                         this.books.push(book)
@@ -30,6 +31,7 @@ export default {
             bookService.addGoogleBook(book)
                 .then(book => {
                     this.$emit('addbook', book)
+                    this.books=[]
                 })
 
         }

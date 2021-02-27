@@ -11,9 +11,10 @@ export default {
         <div v-for="note in notes" :key="note.id" class="card flex" :style="{'background-color': note.color }">
             <h3 class="note-header">{{note.header}}</h3>
             <component :is="currentTypeComponent(note)" :note="note" ></component>
-            <div>
-                <input v-if="note.isEdit" v-model="noteNew.header" type="text" placeholder="Header Update">
-                <input v-if="note.isEdit" v-model="noteNew.text" @keyup.enter="newNoteUpdate(note)" type="text" placeholder="Text Update">
+            <div v-if="note.isEdit" class="edit-note-container flex">
+                <input v-model="noteNew.header" type="text" placeholder="Header Update">
+                <input v-if="note.type === 'keepText' || note.type === 'keepImg'" v-model="noteNew.text" type="text" placeholder="Text Update">
+                <button @click="newNoteUpdate(note)">Save</button>
             </div>
         </div>
     </section>
@@ -37,7 +38,7 @@ export default {
                 })
         },
         newNoteUpdate(note) {
-            console.log('note:', note)
+
             var newNote = JSON.parse(JSON.stringify(note))
             newNote.text = this.noteNew.text
             newNote.header = this.noteNew.header

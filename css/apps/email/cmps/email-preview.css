@@ -19,27 +19,21 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    /* outline: 10px red solid; */
-    /* position: relative; */
 }
 
-
-
-.readAndClose :hover, .unreadAndClose :hover {
-    box-shadow: 0 -30px 32px -35px rgba(35,27,27,0.74) inset;
-    /* border-bottom:1px solid black; */
+.readAndClose :hover,
+.unreadAndClose :hover {
+    box-shadow: 0 -30px 32px -35px rgba(35, 27, 27, 0.74) inset;
 }
 
 .readAndClose *> :hover {
     box-shadow: none;
-    border-bottom:none;
-
+    border-bottom: none;
 }
 
 .unreadAndClose *> :hover {
     box-shadow: none;
-    border-bottom:none;
-
+    border-bottom: none;
 }
 
 .email-specific-email-top {

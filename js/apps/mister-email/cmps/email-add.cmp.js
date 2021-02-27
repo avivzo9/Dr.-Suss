@@ -1,32 +1,31 @@
 import newEmailModal from './email-new-email-template.cmp.js'
 export default {
-  template: `
+    template: `
   <section>
-           <button class="addNewEmailButton" @click="addNewEmail">send new email</button>
+           <button class="addNewEmailButton" @click="addNewEmail">Compose Email</button>
            <new-email-modal @close-modal="modalClose" v-if="isClicked"/>
   </section> 
   `,
-  data() {
-    return {
-      isClicked: false
-    }
-  },
-  methods: {
-    addNewEmail() {
-      this.isClicked = true;
+    data() {
+        return {
+            isClicked: false
+        }
     },
-    modalClose() {
-      this.isClicked=false;
+    methods: {
+        addNewEmail() {
+            this.isClicked = true;
+        },
+        modalClose() {
+            this.isClicked = false;
+        },
     },
-  },
 
-  computed: {
-  },
-  created() {
+    computed: {},
+    created() {
 
 
-  },
-  components: {
-    newEmailModal
-  },
+    },
+    components: {
+        newEmailModal
+    },
 };

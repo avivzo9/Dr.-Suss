@@ -1,5 +1,6 @@
 
-import { eventBus } from "../services/email-event-bus.service.js"
+import { eventBus } from "../../miss-book/services/event-bus-service.js"
+
 import { utillService } from "../../../services/util.service.js";
 import { emailsService } from "../services/email.service.js";
 
@@ -45,8 +46,7 @@ export default {
                         txt: 'Email saved succesfully',
                         type: 'success',
                     };
-                    console.log('msg:', msg)
-                    eventBus.$emit('show-msg', msg);
+                    eventBus.$emit('show-msg-all', msg);
                     eventBus.$emit('update-emails')
                 }).catch(err => {
                     console.log(err);
@@ -54,11 +54,10 @@ export default {
                         txt: err.message,
                         type: 'error'
                     }
-                    eventBus.$emit('show-msg', msg)
+                    console.log('msg:', msg)
+
+                    eventBus.$emit('show-msg-all', msg)
                 })
-                // .then(() => {
-                //     eventBus.$emit('update-emails')
-                // })
                 this.$emit('close-modal', this.closePressed)
             }else console.log('errrrrrror');
             

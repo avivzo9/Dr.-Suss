@@ -42,7 +42,7 @@
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px;
-    color:white;
+    color: white;
 }
 
 
@@ -59,15 +59,15 @@
 }
 
 .book-search-input {
-    color:white;
+    color: white;
     padding: 5px;
     border: 1px solid rgba(128, 128, 128, 0.5);
     background-color: white;
     background-color: rgba(255, 255, 255, 0.2);
 }
-.book-search-input::placeholder{
-    color:white;
 
+.book-search-input::placeholder {
+    color: white;
 }
 
 .book-add-list {
@@ -127,23 +127,21 @@
     display: flex;
     justify-content: space-around;
     border: 2px solid white;
-    background-color: wheat;
+    color: white;
 }
 
 table {
     margin-top: 10px;
-    border: 1px solid black;
     font-family: cursive;
     table-layout: fixed;
     ;
 }
 
 th {
-    border: 1px solid black;
+    border-bottom: 1px solid #000;
 }
 
 td {
-    border: 1px solid black;
     text-align: center;
     table-layout: fixed;
 }
@@ -173,11 +171,18 @@ td {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     justify-content: space-between;
     align-items: center;
     font-family: cursive;
     text-decoration: bolder;
+}
+
+.textarea-review {
+    resize: none;
+}
+
+.textarea-review::placeholder {
+    color: black;
 }
 
 .reviews-section {

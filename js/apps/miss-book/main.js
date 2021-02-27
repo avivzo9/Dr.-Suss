@@ -6,7 +6,7 @@ import homePage from '../miss-book/pages/home-page.cmp.js';
 export default {
     router: myRouter,
     template: `
-    <section> 
+    <section class="book-container"> 
         <user-msg/>
         <app-header></app-header>
         <router-view/>

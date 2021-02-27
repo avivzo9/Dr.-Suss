@@ -22,10 +22,7 @@
     /* outline: 10px red solid; */
     /* position: relative; */
 }
-.email-specific-email :hover{
-    /* box-shadow: inset 8px 80px 33px -49px rgba(35,27,27,0.65); */
-/* background-color: red; */
-}
+
 
 
 .readAndClose :hover, .unreadAndClose :hover {

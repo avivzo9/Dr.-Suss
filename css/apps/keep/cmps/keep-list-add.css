@@ -1,0 +1,24 @@
+.keep-add-list-container button {
+    padding: 5px;
+    background-color: rgba(128, 128, 128);
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    position: static;
+}
+
+.add-list-header {
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    width: 17em;
+}
+
+.list-add-line {
+    padding: 5px;
+}
+
+.list-add-line input {
+    width: 17em;
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.7);
+}

@@ -1,7 +1,6 @@
 import bookApp from './pages/book-app.cmp.js';
 import homePage from './pages/home-page.cmp.js';
 import bookDetails from './pages/book-details.cmp.js';
-import about from './pages/about.cmp.js';
 
 const aboutTeam = {
     template: `
@@ -27,9 +26,6 @@ const aboutServices = {
     }
 }
 
-
-
-
 const routes = [{
         path: '/miss-books',
         component: homePage,
@@ -41,19 +37,6 @@ const routes = [{
     {
         path: '/book-home',
         component: homePage,
-    },
-    {
-        path: '/about',
-        component: about,
-        children: [{
-                path: 'team',
-                component: aboutTeam,
-            },
-            {
-                path: 'services',
-                component: aboutServices,
-            },
-        ],
     },
     {
         path: '/book/:bookId',

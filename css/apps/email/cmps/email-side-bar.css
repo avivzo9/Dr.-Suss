@@ -11,7 +11,14 @@
 .email-side-bar button {
     width: 100%;
 }
-
+.addNewEmailButton{
+    border-radius: 12px;
+}
+.addNewEmailButton:hover{
+    color: rgba(0,0,0,.6);
+    background: #dac1c1;
+    text-shadow: 3px 2px 3px rgba(215, 252, 130, 0.712);
+}
 .new-mail-modal-contaier {
     display: flex;
     bottom: 0;
@@ -66,6 +73,9 @@
     background-color:#404040;
     color: #CDCDCD;
     font-size: 1.1em;
+}
+.new-mail-modal input{
+    background-color: white;
 }
 .new-mail-modal-header button {
     width: 30px;

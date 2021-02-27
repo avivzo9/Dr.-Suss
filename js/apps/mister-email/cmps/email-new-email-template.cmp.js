@@ -1,7 +1,7 @@
-
 import { eventBus } from "../services/email-event-bus.service.js"
 import { utillService } from "../../../services/util.service.js";
 import { emailsService } from "../services/email.service.js";
+import userMsg from '../../../cmps/all-user-msg.cmp.js'
 
 
 export default {
@@ -34,35 +34,28 @@ export default {
         }
     },
     methods: {
-        happens() {
-            
-        },
         save() {
-            if(this.email.to.includes('@')){
+            if (this.email.to.includes('@')) {
                 emailsService.addEmail(this.email)
-                .then(() => {
-                    const msg = {
-                        txt: 'Email saved succesfully',
-                        type: 'success',
-                    };
-                    console.log('msg:', msg)
-                    eventBus.$emit('show-msg', msg);
-                    eventBus.$emit('update-emails')
-                }).catch(err => {
-                    console.log(err);
-                    const msg = {
-                        txt: err.message,
-                        type: 'error'
-                    }
-                    eventBus.$emit('show-msg', msg)
-                })
-                // .then(() => {
-                //     eventBus.$emit('update-emails')
-                // })
+                    .then(() => {
+                        var msg = {
+                            txt: 'Email saved succesfully',
+                            type: 'success',
+                        };
+                        eventBus.$emit('show-msg-email', msg);
+                        eventBus.$emit('update-emails')
+                    }).catch(err => {
+                        console.log(err);
+                        var msg = {
+                            txt: err.message,
+                            type: 'error'
+                        }
+                        eventBus.$emit('show-msg-email', msg)
+                    })
                 this.$emit('close-modal', this.closePressed)
-            }else console.log('errrrrrror');
-            
-            
+            } else console.log('errrrrrror');
+
+
         },
         closeModal() {
             this.email.to = ''
@@ -73,12 +66,12 @@ export default {
         },
     },
 
-    computed: {
-    },
+    computed: {},
     created() {
 
     },
     components: {
-        emailsService
+        emailsService,
+        userMsg
     },
 };

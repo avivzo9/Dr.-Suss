@@ -9,6 +9,7 @@ export default {
     <section class="keep-app-main">
         <div class="keep-app-second">
             <keep-header-cmp />
+            <div v-if="msg" class="user-msg-all">{{NoteMsgToShow}}</div>
             <keep-add-note-cmp @note-update="loadNotes" />
             <keep-list :notes="notesToShow" />
         </div>
@@ -17,7 +18,8 @@ export default {
     data() {
         return {
             notes: [],
-            search: null
+            search: null,
+            msg: ''
         }
     },
     methods: {
@@ -29,9 +31,18 @@ export default {
         },
         setSearch(searchNote) {
             this.search = searchNote
-        }
+        },
+        alertNoteMsg(msg) {
+            this.msg = msg
+            setTimeout(() => {
+                this.msg = null
+            }, 3000);
+        },
     },
     computed: {
+        NoteMsgToShow() {
+            return this.msg.txt
+        },
         notesToShow() {
             if (!this.search) return this.notes;
             const searchStr = this.search.toLowerCase()
@@ -44,14 +55,13 @@ export default {
     created() {
         this.loadNotes()
         eventBus.$on('note-update', this.loadNotes)
-        eventBus.$on('note-update', () => {
-            console.log('notes updated!');
-        })
+        eventBus.$on('note-add-msg', this.alertNoteMsg)
         eventBus.$on('searched', this.setSearch)
     },
     destroyed() {
         eventBus.$off('note-update', this.loadNotes)
         eventBus.$off('searched', this.setSearch)
+        eventBus.$off('note-add-msg', this.alertNoteMsg)
     },
     components: {
         keepAddNoteCmp,

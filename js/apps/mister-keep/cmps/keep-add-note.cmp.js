@@ -12,13 +12,11 @@ export default {
                     <button @click="changeToList">☑️</button>
                 </div>
                 <div class="header-pin flex" v-if="isClicked">
-                    <input required class="text-box-header" v-model="note.header" type="text" placeholder="header" >
-                    <button class="pin-note-btn">📌</button>
+                    <input class="text-box-header" v-model="note.header" type="text" placeholder="header" >
                 </div>
                 <textarea class="text-box-area" v-if="isClicked" v-model="note.text" placeholder="write note"></textarea>
                 <div class="note-edit-container flex" v-if="isClicked">
                     <div class="note-edit flex">
-                        <input type="color" v-model="note.color">
                         <label class="custom-file-upload">
                         <input @change="imgLoad" name="img-upload" type="file"/>Upload Image</label>
                     </div>
@@ -29,10 +27,13 @@ export default {
                 </div>
             </form>
             <div v-if="isList">
-                <div class="keep-add-list-container">
-                    <input class="add-list-header" required v-model="list.header" type="text" placeholder="header">
-                    <keep-add-list-cmp @check-line="switchCheck" @add-list-line="addlistLine" v-for="num in listCount" v-if="isList" @send-list-add="changeToList" />
-                    <button @click="addList">Save</button>
+                    <div class="keep-add-list-container">
+                        <input class="add-list-header" required v-model="list.header" type="text" placeholder="header">
+                        <keep-add-list-cmp @check-line="switchCheck" @add-list-line="addlistLine" v-for="num in listCount" v-if="isList" @send-list-add="changeToList" />
+                        <div class="save-cancel-list flex">
+                        <button @click="closeList">Cancel</button>
+                        <button @click="addList">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,10 +69,23 @@ export default {
             this.isClicked = false;
         },
         addNote() {
+            if (!this.note.header && !this.note.text && !this.note.src) {
+                var msg = {
+                    txt: 'Cant save empty note!',
+                    type: 'success',
+                }
+                eventBus.$emit('note-add-msg', msg)
+                return
+            }
             if (this.note.color === '') this.note.color === 'white'
             this.$emit('color-changed', this.note.color)
             keepService.addNote(this.note)
                 .then(() => {
+                    var msg = {
+                        txt: 'Note saved succesfully',
+                        type: 'success',
+                    }
+                    eventBus.$emit('note-add-msg', msg)
                     this.$emit('note-update')
                     this.close()
                     this.note = {
@@ -85,6 +99,11 @@ export default {
         sendDeleteNote(id) {
             keepService.deleteNote(id)
                 .then(() => {
+                    var msg = {
+                        txt: 'Note deleted',
+                        type: 'success',
+                    }
+                    eventBus.$emit('note-add-msg', msg)
                     this.$emit('note-update')
                 })
         },
@@ -95,6 +114,7 @@ export default {
             reader.onload = e => {
                 this.note.src = e.target.result;
                 this.note.type = "keepImg"
+                this.addNote()
             };
         },
         setImg(imgSrc) {
@@ -111,8 +131,14 @@ export default {
             this.listCount += 1;
         },
         addList() {
-            keepService.addNote(this.list)
+            this.isList = false,
+                keepService.addNote(this.list)
                 .then(() => {
+                    var msg = {
+                        txt: 'List saved succesfully',
+                        type: 'success',
+                    }
+                    eventBus.$emit('note-add-msg', msg)
                     eventBus.$emit('note-update')
                 })
         },
@@ -127,6 +153,9 @@ export default {
                 .then(() => {
                     eventBus.$emit('note-update')
                 })
+        },
+        closeList() {
+            this.isList = false
         }
     },
     created() {

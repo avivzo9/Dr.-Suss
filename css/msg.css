@@ -1,0 +1,14 @@
+.user-msg-all {
+    width: 300px;
+    height: 90px;
+    text-align: center;
+    position: fixed;
+    color: white;
+    top: 185px;
+    border: 1px solid white;
+    border-radius: 20px 0 0 20px;
+    right: 0;
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}

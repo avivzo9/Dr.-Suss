@@ -60,7 +60,7 @@ var gNotes = [{
     {
         id: storageService.makeId(),
         header: 'HTML.',
-        text: 'HTML is useless.',
+        text: 'HTML with Vue is useless.',
         color: 'lightgreen',
         isPinned: false,
         isEdit: false,
@@ -125,6 +125,7 @@ function query() {
 }
 
 function addNote(note) {
+
     if (!note.type) note.type = 'keepText'
     if (!note.color) note.color = '#ffca7b'
     if (!note.id) note.id = utillService.makeId()

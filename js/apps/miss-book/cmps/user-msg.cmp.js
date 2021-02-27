@@ -22,7 +22,7 @@ export default {
     created() {
         eventBus.$on('show-msg', this.setMsg)
     },
-    destroyed(){
+    destroyed() {
         eventBus.$off('show-msg', this.setMsg)
     }
 }

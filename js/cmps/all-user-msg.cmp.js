@@ -12,7 +12,8 @@ export default {
         }
     },
     methods: {
-        setMsg(msg) {
+        setEmailMsg(msg) {
+            alert('working!')
             console.log('user');
             this.msg = msg
             setTimeout(() => {
@@ -21,11 +22,12 @@ export default {
         }
     },
     created() {
-        eventBus.$on('show-msg', () => {
-        })
-        // eventBus.$on('show-msg', this.setMsg)
+        eventBus.$on('show-msg-email', this.setEmailMsg);
+        eventBus.$on('show-msg', () => {})
+            // eventBus.$on('show-msg', this.setMsg)
     },
     destroyed() {
+        eventBus.$on('show-msg-email', this.setEmailMsg);
         eventBus.$off('show-msg', this.setMsg)
     }
 }

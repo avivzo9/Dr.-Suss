@@ -7,6 +7,14 @@
     position: static;
 }
 
+.save-cancel-list {
+    justify-content: flex-end;
+}
+
+.save-cancel-list>* {
+    margin-left: 10px;
+}
+
 .add-list-header {
     padding: 5px;
     border: 1px solid rgba(128, 128, 128, 0.7);

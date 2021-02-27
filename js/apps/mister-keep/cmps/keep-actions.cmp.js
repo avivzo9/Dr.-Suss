@@ -5,7 +5,8 @@ export default {
     props: ['note'],
     template: `
         <div class="action-panel flex">
-            <input type="color" @blur="changeColor(note.id, $event)">
+            <label class="keep-color-action">
+            <input type="color" name="keep-color-action" @blur="changeColor(note.id, $event)" />🎨</label>
             <button @click="sendDelete(note.id)" class="edit-btn">🗑</button>
             <button @click="sendEditNote(note)" class="edit-btn">🖊</button>
         </div>

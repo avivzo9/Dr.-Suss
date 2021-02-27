@@ -38,12 +38,16 @@ export default {
                 })
         },
         newNoteUpdate(note) {
-
             var newNote = JSON.parse(JSON.stringify(note))
             newNote.text = this.noteNew.text
             newNote.header = this.noteNew.header
             keepService.updateNewEditNote(newNote, note)
                 .then(() => {
+                    var msg = {
+                        txt: 'Note saved succesfully',
+                        type: 'success',
+                    }
+                    eventBus.$emit('note-add-msg', msg)
                     this.noteNew.text = '';
                     this.noteNew.header = '';
                     eventBus.$emit('note-update')

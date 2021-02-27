@@ -1,6 +1,7 @@
 .add-note-container {
     height: 120px;
     margin-top: 20px;
+    display: table;
 }
 
 .add-note {
@@ -9,6 +10,11 @@
 
 input[name=img-upload] {
     display: none;
+}
+
+.custom-file-upload {
+    color: white;
+    cursor: pointer;
 }
 
 .text-box {
@@ -40,7 +46,7 @@ textarea::placeholder {
 
 .text-box-header {
     color: white;
-    width: 42.4em;
+    width: 45.6em;
     border: none;
     border-left: 1px solid rgba(128, 128, 128, 0.5);
     border-top: 1px solid rgba(128, 128, 128, 0.5);
@@ -78,12 +84,19 @@ textarea::placeholder {
     width: 50%;
 }
 
+.note-edit input {
+    border: 1px solid white;
+    cursor: pointer;
+}
+
 .note-save-cancel {
     justify-content: flex-end;
     width: 50%;
 }
 
 .note-save-cancel>* {
+    color: white;
+    font-size: 17px;
     border: none;
     background-color: inherit;
 }

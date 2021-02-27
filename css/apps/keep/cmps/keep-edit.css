@@ -1,0 +1,26 @@
+.edit-note-container {
+    flex-direction: column;
+    margin-top: 7px;
+}
+
+.edit-note-container>* {
+    padding: 5px;
+    margin: 5px;
+}
+
+.edit-note-container input {
+    border: 1px solid rgba(128, 128, 128, 0.7);
+}
+
+.edit-note-container button {
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.edit-note-container input::placeholder {
+    color: black;
+}
+
+.edit-note-container button::placeholder {
+    color: black;
+}

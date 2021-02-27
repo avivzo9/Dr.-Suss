@@ -11,7 +11,7 @@ export default {
 <input type="range" min="0" max="5" step="1" v-model="review.rate"/>
 <span v-text="review.rate"></span>
 <input type="date" v-model="review.readAt" value="2021-02-22" placeholder="2021-02-22"> 
-<textarea placeholder="Write What You Think" maxlength="50" v-model="review.comment"></textarea>
+<textarea class="textarea-review" placeholder="Write a review" maxlength="50" v-model="review.comment"></textarea>
 <button>Submit</button>
 </form>
 <div class="reviews-section">
@@ -60,7 +60,7 @@ export default {
         },
     },
     computed: {
-        rate: function () {
+        rate: function() {
             return this.value;
         },
     },

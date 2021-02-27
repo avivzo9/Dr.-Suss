@@ -93,7 +93,6 @@ var gNotes = [{
         isEdit: false,
         type: 'keepText'
     },
-
     {
         id: storageService.makeId(),
         header: 'Dont forget!',
@@ -103,6 +102,17 @@ var gNotes = [{
         src: 'img/dream-big.jpeg',
         type: 'keepImg'
     },
+    {
+        id: storageService.makeId(),
+        header: 'Vue JS.',
+        text: 'Master it!',
+        color: '#ffca7b',
+        isPinned: false,
+        isEdit: false,
+        src: 'img/vue-picture.jpeg',
+        type: 'keepImg'
+    },
+
 ]
 
 function query() {

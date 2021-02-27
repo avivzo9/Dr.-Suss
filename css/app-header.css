@@ -34,6 +34,15 @@
     color: wheat;
 }
 
+.app-header input {
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.app-header {
+    padding: 15px;
+}
+
 .app-header-home {
     font-size: 25px;
     font-weight: 600;

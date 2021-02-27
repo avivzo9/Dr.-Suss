@@ -1,6 +1,7 @@
 .email-side-bar {
     width: 15%;
     flex-direction: column;
+    margin-right: 10px;
 }
 
 .email-side-bar>* {
@@ -11,14 +12,20 @@
 .email-side-bar button {
     width: 100%;
 }
-.addNewEmailButton{
-    border-radius: 12px;
+
+.addNewEmailButton {
+    border: 1px solid rgba(128, 128, 128);
+    border-radius: 10px;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
 }
-.addNewEmailButton:hover{
-    color: rgba(0,0,0,.6);
+
+.addNewEmailButton:hover {
+    color: rgba(0, 0, 0, .6);
     background: #dac1c1;
     text-shadow: 3px 2px 3px rgba(215, 252, 130, 0.712);
 }
+
 .new-mail-modal-contaier {
     display: flex;
     bottom: 0;
@@ -27,7 +34,6 @@
     width: 24em;
     height: 27em;
     box-shadow: 0 20px 8px 3px #404040;
-
 }
 
 .new-mail-modal input {
@@ -35,6 +41,7 @@
     height: 2.5em;
     border: none;
 }
+
 .new-mail-modal :nth-child(1) {
     height: 2.5em;
 }
@@ -48,7 +55,7 @@
     height: 21.5em;
     width: 100%;
     border-bottom: 0;
-    border-right: 0 ;
+    border-right: 0;
     border-left: 0;
     border-top: 1px solid black;
     resize: none;
@@ -70,18 +77,21 @@
     padding-right: 10px;
     padding-left: 10px;
     border-radius: 15px 15px 0 0;
-    background-color:#404040;
+    background-color: #404040;
     color: #CDCDCD;
     font-size: 1.1em;
 }
-.new-mail-modal input{
+
+.new-mail-modal input {
     background-color: white;
 }
+
 .new-mail-modal-header button {
     width: 30px;
-    background-color:inherit;
+    background-color: inherit;
     border: none;
 }
+
 .new-mail-modal-header label {
     align-items: center;
 }

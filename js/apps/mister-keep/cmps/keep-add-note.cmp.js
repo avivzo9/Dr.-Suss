@@ -9,7 +9,7 @@ export default {
             <form @submit.prevent="addNote" v-if="!isList">
                 <div class="add-types flex" v-if="!isClicked">
                     <input class="text-box" type="text" placeholder="Write note" @click="open" >
-                    <button @click="changeToList">List</button>
+                    <button @click="changeToList">☑️</button>
                 </div>
                 <div class="header-pin flex" v-if="isClicked">
                     <input required class="text-box-header" v-model="note.header" type="text" placeholder="header" >

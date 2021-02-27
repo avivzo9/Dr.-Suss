@@ -16,18 +16,33 @@ export const keepService = {
 
 var gNotes = [{
         id: storageService.makeId(),
-        header: 'CSS',
-        text: 'Do some work on CSS.',
+        header: 'Grocery list',
+        text: 'Untill 30/4',
         color: '#ffca7b',
         isPinned: false,
+        todos: [
+            { id: storageService.makeId(), text: 'Pepper.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Soap.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Razors.', doneAt: Date.now(), isDone: true },
+            { id: storageService.makeId(), text: 'Dog food.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Potatoes.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Garlic.', doneAt: Date.now(), isDone: true },
+            { id: storageService.makeId(), text: 'Cheese.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Banana.', doneAt: Date.now(), isDone: true },
+            { id: storageService.makeId(), text: 'Rice.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Melon.', doneAt: Date.now(), isDone: false },
+            { id: storageService.makeId(), text: 'Shampoo.', doneAt: Date.now(), isDone: true },
+            { id: storageService.makeId(), text: 'Tuna.', doneAt: Date.now(), isDone: true },
+            { id: storageService.makeId(), text: 'Ice cream.', doneAt: Date.now(), isDone: true },
+        ],
         isEdit: false,
-        type: 'keepText'
+        type: 'keepList'
     },
     {
         id: storageService.makeId(),
-        header: 'JS',
-        text: 'Make ToDo List.',
-        color: '#ffca7b',
+        header: 'CSS.',
+        text: 'Do some work on CSS.',
+        color: 'orange',
         isPinned: false,
         isEdit: false,
         type: 'keepText'
@@ -44,9 +59,9 @@ var gNotes = [{
     },
     {
         id: storageService.makeId(),
-        header: 'HTML',
+        header: 'HTML.',
         text: 'HTML is useless.',
-        color: '#ffca7b',
+        color: 'lightgreen',
         isPinned: false,
         isEdit: false,
         type: 'keepText'
@@ -55,10 +70,46 @@ var gNotes = [{
         id: storageService.makeId(),
         header: 'Samples',
         text: 'Send samples to the lab, and try it on others 😈.',
+        color: 'lightblue',
+        isPinned: false,
+        isEdit: false,
+        type: 'keepText'
+    },
+    {
+        id: storageService.makeId(),
+        header: 'Take medication 💉',
+        text: 'Every day, 10:00 AM.',
         color: '#ffca7b',
         isPinned: false,
         isEdit: false,
         type: 'keepText'
+    },
+    {
+        id: storageService.makeId(),
+        header: 'JS.',
+        text: 'Make ToDo List.',
+        color: '#ffca7b',
+        isPinned: false,
+        isEdit: false,
+        type: 'keepText'
+    },
+    {
+        id: storageService.makeId(),
+        header: 'JS.',
+        text: 'Make ToDo List.',
+        color: '#ffca7b',
+        isPinned: false,
+        isEdit: false,
+        type: 'keepText'
+    },
+    {
+        id: storageService.makeId(),
+        header: 'Dont forget!',
+        color: 'gray',
+        isPinned: false,
+        isEdit: false,
+        src: 'img/dream-big.jpeg',
+        type: 'keepImg'
     },
 ]
 

@@ -2,8 +2,7 @@ import { utillService } from "../../../services/util.service.js"
 
 export default {
     template: `
-        <div class="flex">
-            <input type="checkbox" >
+        <div class="list-add-line flex">
             <input v-model="todo.text" ref="listText" @keyup.enter="sendAddListLine" type="text" placeholder="What todo?">
         </div>
     `,

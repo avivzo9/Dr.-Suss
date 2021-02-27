@@ -13,11 +13,33 @@ input[name=img-upload] {
 
 .text-box {
     width: 45em;
-    height: 2em;
+    height: 3em;
     padding: 12px;
+    color: white;
+    font-size: 15px;
+    border-right: none;
+    border-top: black;
+}
+
+.add-types button {
+    font-size: 15px;
+    border: 1px solid rgb(118, 118, 118);
+    border-top: black;
+    border-left: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 45px;
+}
+
+input[type=text]::placeholder {
+    color: white;
+}
+
+textarea::placeholder {
+    color: white;
 }
 
 .text-box-header {
+    color: white;
     width: 42.4em;
     border: none;
     border-left: 1px solid rgba(128, 128, 128, 0.5);
@@ -32,6 +54,7 @@ input[name=img-upload] {
     border: 1px solid rgba(128, 128, 128, 0.5);
     padding: 12px;
     resize: none;
+    color: white;
     font-family: cursive;
     background-color: rgba(255, 255, 255, 0.2);
 }

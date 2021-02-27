@@ -5,12 +5,12 @@ export default {
     props: ['note'],
     template: `
             <div class="text-card flex">
+                <p>{{note.text}}</p>
                 <ul>
                     <li v-for="todo in note.todos" :key="todo.id" :class="doneClass(todo.isDone)" @click="sendCheck(todo)">
-                        {{todo.text}}
+                       - {{todo.text}}
                     </li>
                 </ul>
-                <p>{{note.text}}</p>
                 <keep-actions-cmp :note="note" />
             </div>
     `,

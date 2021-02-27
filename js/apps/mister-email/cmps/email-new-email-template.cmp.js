@@ -38,19 +38,21 @@ export default {
             if (this.email.to.includes('@')) {
                 emailsService.addEmail(this.email)
                     .then(() => {
-                        var msg = {
+                        const msg = {
                             txt: 'Email saved succesfully',
                             type: 'success',
                         };
-                        eventBus.$emit('show-msg-email', msg);
+                        eventBus.$emit('show-msg-all', msg);
                         eventBus.$emit('update-emails')
                     }).catch(err => {
                         console.log(err);
-                        var msg = {
+                        const msg = {
                             txt: err.message,
                             type: 'error'
                         }
-                        eventBus.$emit('show-msg-email', msg)
+                        console.log('msg:', msg)
+
+                        eventBus.$emit('show-msg-all', msg)
                     })
                 this.$emit('close-modal', this.closePressed)
             } else console.log('errrrrrror');

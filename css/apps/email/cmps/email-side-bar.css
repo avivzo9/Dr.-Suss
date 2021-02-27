@@ -42,6 +42,13 @@
     border: none;
 }
 
+.new-mail-modal input::placeholder {
+    color: #404040;
+}
+.new-mail-modal textarea::placeholder {
+    color: #404040;
+}
+
 .new-mail-modal :nth-child(1) {
     height: 2.5em;
 }
